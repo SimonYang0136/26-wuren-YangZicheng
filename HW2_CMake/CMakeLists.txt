@@ -9,12 +9,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(OpenCV REQUIRED)
 
 # 添加子目录
-add_subdirectory("CMake 1/modules/A1")
-add_subdirectory("CMake 1/modules/A2")
-add_subdirectory("CMake 1/modules/M1")
-add_subdirectory("CMake 1/modules/M2")
-add_subdirectory("CMake 1/common/math")
-add_subdirectory("CMake 1/common/kalman")
+add_subdirectory("CMake 1/modules")
+
+add_subdirectory("CMake 1/common/")
 
 # 创建test可执行文件
 add_executable(test "CMake 1/main.cpp")
