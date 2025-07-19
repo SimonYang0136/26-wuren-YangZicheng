@@ -183,17 +183,11 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Common_INCLUDE_DIRS
-Common_INCLUDE_DIRS:PATH=/home/simon/Desktop/Homeworks/HW2_CMake/CMake 1/common/include
-
 //Dependencies for the target
 M1_LIB_DEPENDS:STATIC=general;A1;
 
 //Dependencies for the target
-M2_LIB_DEPENDS:STATIC=general;A1;general;A2;
-
-//Modules_INCLUDE_DIRS
-Modules_INCLUDE_DIRS:PATH=/home/simon/Desktop/Homeworks/HW2_CMake/CMake 1/modules/include
+M2_LIB_DEPENDS:STATIC=general;A1;general;A2;general;kalman;
 
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/opencv4
@@ -301,7 +295,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

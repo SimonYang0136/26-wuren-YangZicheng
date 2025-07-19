@@ -25,7 +25,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/M2/CMakeFiles/M2.dir/DependInfo.cmake"
   "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/common/math/CMakeFiles/math.dir/DependInfo.cmake"
   "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/A1/CMakeFiles/A1.dir/DependInfo.cmake"
-  "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles/A2.dir/DependInfo.cmake"
+  "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/A2/CMakeFiles/A2.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

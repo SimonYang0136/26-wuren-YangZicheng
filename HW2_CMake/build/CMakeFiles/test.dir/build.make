@@ -102,7 +102,7 @@ test: CMake\ 1/modules/M1/libM1.a
 test: CMake\ 1/modules/M2/libM2.a
 test: CMake\ 1/common/math/libmath.a
 test: CMake\ 1/modules/A1/libA1.a
-test: libA2.a
+test: CMake\ 1/modules/A2/libA2.a
 test: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.2.0
 test: /usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.2.0
 test: /usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.2.0

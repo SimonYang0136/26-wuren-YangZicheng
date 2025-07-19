@@ -99,14 +99,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/common//CMakeFiles/progress.marks"
-	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/common/all"
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/A2//CMakeFiles/progress.marks"
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/modules/A2/all"
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/common/clean"
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/modules/A2/clean"
 .PHONY : clean
 
 # The main clean target
@@ -116,18 +116,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/common/preinstall"
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/modules/A2/preinstall"
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/common/preinstall"
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/modules/A2/preinstall"
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
 	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+CMake\ 1/modules/A2/CMakeFiles/A2.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/modules/A2/CMakeFiles/A2.dir/rule"
+.PHONY : CMake\ 1/modules/A2/CMakeFiles/A2.dir/rule
+
+# Convenience name for target.
+A2: CMake\ 1/modules/A2/CMakeFiles/A2.dir/rule
+
+.PHONY : A2
+
+# fast build rule for target.
+A2/fast:
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f "CMake 1/modules/A2/CMakeFiles/A2.dir/build.make" "CMake 1/modules/A2/CMakeFiles/A2.dir/build"
+.PHONY : A2/fast
+
+src/A2.o: src/A2.cpp.o
+
+.PHONY : src/A2.o
+
+# target to build an object file
+src/A2.cpp.o:
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f "CMake 1/modules/A2/CMakeFiles/A2.dir/build.make" "CMake 1/modules/A2/CMakeFiles/A2.dir/src/A2.cpp.o"
+.PHONY : src/A2.cpp.o
+
+src/A2.i: src/A2.cpp.i
+
+.PHONY : src/A2.i
+
+# target to preprocess a source file
+src/A2.cpp.i:
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f "CMake 1/modules/A2/CMakeFiles/A2.dir/build.make" "CMake 1/modules/A2/CMakeFiles/A2.dir/src/A2.cpp.i"
+.PHONY : src/A2.cpp.i
+
+src/A2.s: src/A2.cpp.s
+
+.PHONY : src/A2.s
+
+# target to generate assembly for a file
+src/A2.cpp.s:
+	cd /home/simon/Desktop/Homeworks/HW2_CMake/build && $(MAKE) $(MAKESILENT) -f "CMake 1/modules/A2/CMakeFiles/A2.dir/build.make" "CMake 1/modules/A2/CMakeFiles/A2.dir/src/A2.cpp.s"
+.PHONY : src/A2.cpp.s
 
 # Help Target
 help:
@@ -137,6 +179,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... A2"
+	@echo "... src/A2.o"
+	@echo "... src/A2.i"
+	@echo "... src/A2.s"
 .PHONY : help
 
 
