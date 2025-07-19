@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/A2.dir/src/A2.cpp.o"
+  "CMakeFiles/A2.dir/CMake_1/modules/A2/src/A2.cpp.o"
   "libA2.a"
   "libA2.pdb"
 )

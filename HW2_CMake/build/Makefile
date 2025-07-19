@@ -143,6 +143,19 @@ test/fast:
 .PHONY : test/fast
 
 #=============================================================================
+# Target rules for targets named A2
+
+# Build rule for target.
+A2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 A2
+.PHONY : A2
+
+# fast build rule for target.
+A2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/A2.dir/build.make CMakeFiles/A2.dir/build
+.PHONY : A2/fast
+
+#=============================================================================
 # Target rules for targets named math
 
 # Build rule for target.
@@ -167,19 +180,6 @@ A1: cmake_check_build_system
 A1/fast:
 	$(MAKE) $(MAKESILENT) -f "CMake 1/modules/A1/CMakeFiles/A1.dir/build.make" "CMake 1/modules/A1/CMakeFiles/A1.dir/build"
 .PHONY : A1/fast
-
-#=============================================================================
-# Target rules for targets named A2
-
-# Build rule for target.
-A2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 A2
-.PHONY : A2
-
-# fast build rule for target.
-A2/fast:
-	$(MAKE) $(MAKESILENT) -f "CMake 1/modules/A2/CMakeFiles/A2.dir/build.make" "CMake 1/modules/A2/CMakeFiles/A2.dir/build"
-.PHONY : A2/fast
 
 #=============================================================================
 # Target rules for targets named M1
@@ -234,6 +234,33 @@ CMake_1/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/CMake_1/main.cpp.s
 .PHONY : CMake_1/main.cpp.s
 
+CMake_1/modules/A2/src/A2.o: CMake_1/modules/A2/src/A2.cpp.o
+
+.PHONY : CMake_1/modules/A2/src/A2.o
+
+# target to build an object file
+CMake_1/modules/A2/src/A2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/A2.dir/build.make CMakeFiles/A2.dir/CMake_1/modules/A2/src/A2.cpp.o
+.PHONY : CMake_1/modules/A2/src/A2.cpp.o
+
+CMake_1/modules/A2/src/A2.i: CMake_1/modules/A2/src/A2.cpp.i
+
+.PHONY : CMake_1/modules/A2/src/A2.i
+
+# target to preprocess a source file
+CMake_1/modules/A2/src/A2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/A2.dir/build.make CMakeFiles/A2.dir/CMake_1/modules/A2/src/A2.cpp.i
+.PHONY : CMake_1/modules/A2/src/A2.cpp.i
+
+CMake_1/modules/A2/src/A2.s: CMake_1/modules/A2/src/A2.cpp.s
+
+.PHONY : CMake_1/modules/A2/src/A2.s
+
+# target to generate assembly for a file
+CMake_1/modules/A2/src/A2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/A2.dir/build.make CMakeFiles/A2.dir/CMake_1/modules/A2/src/A2.cpp.s
+.PHONY : CMake_1/modules/A2/src/A2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -251,6 +278,9 @@ help:
 	@echo "... CMake_1/main.o"
 	@echo "... CMake_1/main.i"
 	@echo "... CMake_1/main.s"
+	@echo "... CMake_1/modules/A2/src/A2.o"
+	@echo "... CMake_1/modules/A2/src/A2.i"
+	@echo "... CMake_1/modules/A2/src/A2.s"
 .PHONY : help
 
 

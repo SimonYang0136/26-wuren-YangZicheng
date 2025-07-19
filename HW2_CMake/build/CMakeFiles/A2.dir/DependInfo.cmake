@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/simon/Desktop/Homeworks/HW2_CMake/CMake 1/modules/A2/src/A2.cpp" "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/A2/CMakeFiles/A2.dir/src/A2.cpp.o"
+  "/home/simon/Desktop/Homeworks/HW2_CMake/CMake 1/modules/A2/src/A2.cpp" "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles/A2.dir/CMake_1/modules/A2/src/A2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -45,7 +45,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/A1/cmake_install.cmake")
-  include("/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/A2/cmake_install.cmake")
   include("/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/M1/cmake_install.cmake")
   include("/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/M2/cmake_install.cmake")
 

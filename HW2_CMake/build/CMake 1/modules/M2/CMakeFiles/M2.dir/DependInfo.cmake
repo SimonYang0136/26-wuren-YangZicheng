@@ -11,9 +11,9 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../CMake 1/modules/M2/include"
+  "../CMake 1/modules/M2/../../common/kalman/include"
   "../CMake 1/modules/M2/../A1/include"
   "../CMake 1/modules/M2/../A2/include"
-  "../CMake 1/modules/M2/../../common/kalman/include"
   "../CMake 1/modules/A1/include"
   "../CMake 1/modules/A2/include"
   "../CMake 1/common/kalman/include"
@@ -23,7 +23,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/A1/CMakeFiles/A1.dir/DependInfo.cmake"
-  "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMake 1/modules/A2/CMakeFiles/A2.dir/DependInfo.cmake"
+  "/home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles/A2.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

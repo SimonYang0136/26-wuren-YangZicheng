@@ -73,6 +73,7 @@ CMAKE_BINARY_DIR = /home/simon/Desktop/Homeworks/HW2_CMake/build
 
 # The main recursive "all" target.
 all: CMakeFiles/test.dir/all
+all: CMakeFiles/A2.dir/all
 all: CMake\ 1/common/all
 all: CMake\ 1/modules/all
 
@@ -86,6 +87,7 @@ preinstall: CMake\ 1/modules/preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/test.dir/clean
+clean: CMakeFiles/A2.dir/clean
 clean: CMake\ 1/common/clean
 clean: CMake\ 1/modules/clean
 
@@ -153,7 +155,6 @@ CMake\ 1/common/math/clean: CMake\ 1/common/math/CMakeFiles/math.dir/clean
 
 # Recursive "all" directory target.
 CMake\ 1/modules/all: CMake\ 1/modules/A1/all
-CMake\ 1/modules/all: CMake\ 1/modules/A2/all
 CMake\ 1/modules/all: CMake\ 1/modules/M1/all
 CMake\ 1/modules/all: CMake\ 1/modules/M2/all
 
@@ -161,7 +162,6 @@ CMake\ 1/modules/all: CMake\ 1/modules/M2/all
 
 # Recursive "preinstall" directory target.
 CMake\ 1/modules/preinstall: CMake\ 1/modules/A1/preinstall
-CMake\ 1/modules/preinstall: CMake\ 1/modules/A2/preinstall
 CMake\ 1/modules/preinstall: CMake\ 1/modules/M1/preinstall
 CMake\ 1/modules/preinstall: CMake\ 1/modules/M2/preinstall
 
@@ -169,7 +169,6 @@ CMake\ 1/modules/preinstall: CMake\ 1/modules/M2/preinstall
 
 # Recursive "clean" directory target.
 CMake\ 1/modules/clean: CMake\ 1/modules/A1/clean
-CMake\ 1/modules/clean: CMake\ 1/modules/A2/clean
 CMake\ 1/modules/clean: CMake\ 1/modules/M1/clean
 CMake\ 1/modules/clean: CMake\ 1/modules/M2/clean
 
@@ -192,24 +191,6 @@ CMake\ 1/modules/A1/preinstall:
 CMake\ 1/modules/A1/clean: CMake\ 1/modules/A1/CMakeFiles/A1.dir/clean
 
 .PHONY : CMake\ 1/modules/A1/clean
-
-#=============================================================================
-# Directory level rules for directory CMake\ 1/modules/A2
-
-# Recursive "all" directory target.
-CMake\ 1/modules/A2/all: CMake\ 1/modules/A2/CMakeFiles/A2.dir/all
-
-.PHONY : CMake\ 1/modules/A2/all
-
-# Recursive "preinstall" directory target.
-CMake\ 1/modules/A2/preinstall:
-
-.PHONY : CMake\ 1/modules/A2/preinstall
-
-# Recursive "clean" directory target.
-CMake\ 1/modules/A2/clean: CMake\ 1/modules/A2/CMakeFiles/A2.dir/clean
-
-.PHONY : CMake\ 1/modules/A2/clean
 
 #=============================================================================
 # Directory level rules for directory CMake\ 1/modules/M1
@@ -251,9 +232,9 @@ CMake\ 1/modules/M2/clean: CMake\ 1/modules/M2/CMakeFiles/M2.dir/clean
 # Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.
+CMakeFiles/test.dir/all: CMakeFiles/A2.dir/all
 CMakeFiles/test.dir/all: CMake\ 1/common/math/CMakeFiles/math.dir/all
 CMakeFiles/test.dir/all: CMake\ 1/modules/A1/CMakeFiles/A1.dir/all
-CMakeFiles/test.dir/all: CMake\ 1/modules/A2/CMakeFiles/A2.dir/all
 CMakeFiles/test.dir/all: CMake\ 1/modules/M1/CMakeFiles/M1.dir/all
 CMakeFiles/test.dir/all: CMake\ 1/modules/M2/CMakeFiles/M2.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
@@ -277,6 +258,33 @@ test: CMakeFiles/test.dir/rule
 CMakeFiles/test.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/clean
 .PHONY : CMakeFiles/test.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/A2.dir
+
+# All Build rule for target.
+CMakeFiles/A2.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/A2.dir/build.make CMakeFiles/A2.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/A2.dir/build.make CMakeFiles/A2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles --progress-num=5,6 "Built target A2"
+.PHONY : CMakeFiles/A2.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/A2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/A2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles 0
+.PHONY : CMakeFiles/A2.dir/rule
+
+# Convenience name for target.
+A2: CMakeFiles/A2.dir/rule
+
+.PHONY : A2
+
+# clean rule for target.
+CMakeFiles/A2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/A2.dir/build.make CMakeFiles/A2.dir/clean
+.PHONY : CMakeFiles/A2.dir/clean
 
 #=============================================================================
 # Target rules for target CMake 1/common/math/CMakeFiles/math.dir
@@ -333,33 +341,6 @@ CMake\ 1/modules/A1/CMakeFiles/A1.dir/clean:
 .PHONY : CMake\ 1/modules/A1/CMakeFiles/A1.dir/clean
 
 #=============================================================================
-# Target rules for target CMake 1/modules/A2/CMakeFiles/A2.dir
-
-# All Build rule for target.
-CMake\ 1/modules/A2/CMakeFiles/A2.dir/all:
-	$(MAKE) $(MAKESILENT) -f "CMake 1/modules/A2/CMakeFiles/A2.dir/build.make" "CMake 1/modules/A2/CMakeFiles/A2.dir/depend"
-	$(MAKE) $(MAKESILENT) -f "CMake 1/modules/A2/CMakeFiles/A2.dir/build.make" "CMake 1/modules/A2/CMakeFiles/A2.dir/build"
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles --progress-num=5,6 "Built target A2"
-.PHONY : CMake\ 1/modules/A2/CMakeFiles/A2.dir/all
-
-# Build rule for subdir invocation for target.
-CMake\ 1/modules/A2/CMakeFiles/A2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 "CMake 1/modules/A2/CMakeFiles/A2.dir/all"
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles 0
-.PHONY : CMake\ 1/modules/A2/CMakeFiles/A2.dir/rule
-
-# Convenience name for target.
-A2: CMake\ 1/modules/A2/CMakeFiles/A2.dir/rule
-
-.PHONY : A2
-
-# clean rule for target.
-CMake\ 1/modules/A2/CMakeFiles/A2.dir/clean:
-	$(MAKE) $(MAKESILENT) -f "CMake 1/modules/A2/CMakeFiles/A2.dir/build.make" "CMake 1/modules/A2/CMakeFiles/A2.dir/clean"
-.PHONY : CMake\ 1/modules/A2/CMakeFiles/A2.dir/clean
-
-#=============================================================================
 # Target rules for target CMake 1/modules/M1/CMakeFiles/M1.dir
 
 # All Build rule for target.
@@ -390,8 +371,8 @@ CMake\ 1/modules/M1/CMakeFiles/M1.dir/clean:
 # Target rules for target CMake 1/modules/M2/CMakeFiles/M2.dir
 
 # All Build rule for target.
+CMake\ 1/modules/M2/CMakeFiles/M2.dir/all: CMakeFiles/A2.dir/all
 CMake\ 1/modules/M2/CMakeFiles/M2.dir/all: CMake\ 1/modules/A1/CMakeFiles/A1.dir/all
-CMake\ 1/modules/M2/CMakeFiles/M2.dir/all: CMake\ 1/modules/A2/CMakeFiles/A2.dir/all
 	$(MAKE) $(MAKESILENT) -f "CMake 1/modules/M2/CMakeFiles/M2.dir/build.make" "CMake 1/modules/M2/CMakeFiles/M2.dir/depend"
 	$(MAKE) $(MAKESILENT) -f "CMake 1/modules/M2/CMakeFiles/M2.dir/build.make" "CMake 1/modules/M2/CMakeFiles/M2.dir/build"
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/simon/Desktop/Homeworks/HW2_CMake/build/CMakeFiles --progress-num=9,10 "Built target M2"
