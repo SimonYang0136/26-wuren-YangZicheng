@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch参数 -->
+    <arg name="use_rviz" default="false"/>
+    <arg name="debug_mode" default="false"/>
+    <arg name="record_bag" default="false"/>
+    
+    <!-- 加载参数文件到参数服务器 -->
+    <rosparam file="$(find turtle_control_pkg)/config/turtle_params.yaml" command="load"/>
+    
+    <!-- 启动turtlesim节点 -->
+    <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen">
+        <param name="background_r" value="70"/>
+        <param name="background_g" value="130"/>
+        <param name="background_b" value="180"/>
+    </node>
+    
+    <!-- 启动Python速度发布器节点 -->
+    <node name="turtle_velocity_publisher" pkg="turtle_control_pkg" type="turtle_velocity_publisher.py" output="screen">
+        <param name="publish_rate" value="10"/>
+        <remap from="/turtle_velocity_cmd" to="/turtle_velocity_cmd"/>
+        <remap from="/turtle_linear_velocity" to="/turtle_linear_velocity"/>
+    </node>
+    
+    <!-- 启动C++乌龟控制器节点 -->
+    <node name="turtle_controller" pkg="turtle_control_pkg" type="turtle_controller" output="screen">
+        <!-- 控制器特定参数 -->
+        <param name="control_rate" value="20"/>
+        <param name="enable_safety_check" value="true"/>
+        
+        <!-- 话题重映射 -->
+        <remap from="/turtle_velocity_cmd" to="/turtle_velocity_cmd"/>
+        <remap from="/turtle_linear_velocity" to="/turtle_linear_velocity"/>
+        <remap from="/turtle1/cmd_vel" to="/turtle1/cmd_vel"/>
+        <remap from="/turtle1/pose" to="/turtle1/pose"/>
+        
+        <!-- 设置日志级别 -->
+        <env name="ROSCONSOLE_CONFIG_FILE" value="$(find turtle_control_pkg)/config/rosconsole.conf"/>
+    </node>
+    
+    <!-- 条件启动：记录bag文件 -->
+    <node name="rosbag_record" pkg="rosbag" type="record" 
+          args="-o $(find turtle_control_pkg)/data/turtle_control /turtle_velocity_cmd /turtle_linear_velocity /turtle1/pose /turtle1/cmd_vel /turtle_controller_status"
+          if="$(arg record_bag)"/>
+    
+    <!-- 条件启动：RViz可视化 -->
+    <node name="rviz" pkg="rviz" type="rviz" 
+          args="-d $(find turtle_control_pkg)/config/turtle_visualization.rviz" 
+          if="$(arg use_rviz)" 
+          required="false"/>
+    
+    <!-- 条件启动：调试工具 -->
+    <group if="$(arg debug_mode)">
+        <!-- RQT控制台 -->
+        <node name="rqt_console" pkg="rqt_console" type="rqt_console" output="screen"/>
+        
+        <!-- RQT图形界面 -->
+        <node name="rqt_graph" pkg="rqt_graph" type="rqt_graph" output="screen"/>
+        
+        <!-- 话题监控 -->
+        <node name="rqt_topic" pkg="rqt_topic" type="rqt_topic" output="screen"/>
+        
+        <!-- 参数重配置GUI -->
+        <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" output="screen"/>
+    </group>
+    
+    <!-- 静态变换发布器（如果需要） -->
+    <node name="static_transform_publisher" pkg="tf2_ros" type="static_transform_publisher"
+          args="0 0 0 0 0 0 world turtle_frame"/>
+    
+    <!-- 启动信息 -->
+    <param name="launch_info/description" value="Turtle Control Package Launch File"/>
+    <param name="launch_info/version" value="1.0.0"/>
+    <param name="launch_info/author" value="Student"/>
+    <param name="launch_info/date" value="2025-07-20"/>
+    
+</launch>

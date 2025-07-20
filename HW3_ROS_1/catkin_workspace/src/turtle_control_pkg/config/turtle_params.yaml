@@ -1,0 +1,67 @@
+# ROS参数配置文件
+# 用于turtle_control_pkg包的参数设置
+
+# 乌龟运动参数
+turtle_params:
+  motion:
+    max_linear_velocity: 2.0      # 最大线速度 (m/s)
+    max_angular_velocity: 2.0     # 最大角速度 (rad/s)
+    acceleration_limit: 1.0       # 加速度限制 (m/s²)
+    deceleration_limit: 2.0       # 减速度限制 (m/s²)
+  
+  # 轨迹参数
+  trajectory:
+    type: "circular"              # 轨迹类型: circular, sinusoidal, figure_eight, linear
+    radius: 2.0                   # 圆形轨迹半径
+    frequency: 0.5                # 轨迹频率 (Hz)
+    amplitude: 1.0                # 正弦轨迹振幅
+    
+  # 控制器参数
+  control:
+    update_rate: 20.0             # 控制器更新频率 (Hz)
+    kp_linear: 1.0                # 线速度比例增益
+    ki_linear: 0.1                # 线速度积分增益
+    kd_linear: 0.05               # 线速度微分增益
+    kp_angular: 1.0               # 角速度比例增益
+    ki_angular: 0.1               # 角速度积分增益
+    kd_angular: 0.05              # 角速度微分增益
+    
+  # 安全参数
+  safety:
+    enable_boundary_check: true   # 启用边界检查
+    boundary_min_x: 0.5           # X轴最小边界
+    boundary_max_x: 10.5          # X轴最大边界
+    boundary_min_y: 0.5           # Y轴最小边界
+    boundary_max_y: 10.5          # Y轴最大边界
+    margin: 0.5                   # 安全边距
+    emergency_stop_enabled: true  # 启用紧急停止
+    max_deviation: 1.0            # 允许的最大偏差
+    
+  # 监控参数
+  monitoring:
+    log_level: "INFO"             # 日志级别: DEBUG, INFO, WARN, ERROR
+    publish_diagnostics: true     # 发布诊断信息
+    diagnostic_rate: 1.0          # 诊断信息发布频率 (Hz)
+    record_trajectory: false      # 记录轨迹数据
+    
+  # 通信参数
+  communication:
+    queue_size: 10                # 消息队列大小
+    timeout: 5.0                  # 通信超时时间 (s)
+    retry_attempts: 3             # 重试次数
+    
+# 节点特定参数
+turtle_velocity_publisher:
+  publish_rate: 10                # 发布频率 (Hz)
+  use_simulation_time: true       # 使用仿真时间
+  
+turtle_controller:
+  control_rate: 20                # 控制频率 (Hz)
+  enable_safety_check: true       # 启用安全检查
+  
+# 可视化参数
+visualization:
+  show_trajectory: true           # 显示轨迹
+  trajectory_color: [1.0, 0.0, 0.0]  # 轨迹颜色 (RGB)
+  show_velocity_vectors: false    # 显示速度矢量
+  marker_scale: 0.1               # 标记缩放比例

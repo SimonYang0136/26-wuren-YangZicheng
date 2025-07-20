@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>turtle_control_pkg</name>
+  <version>1.0.0</version>
+  <description>ROS package for turtle velocity control with custom messages</description>
+
+  <!-- Maintainer -->
+  <maintainer email="student@example.com">Student</maintainer>
+
+  <!-- License -->
+  <license>MIT</license>
+
+  <!-- Author -->
+  <author email="student@example.com">Student</author>
+
+  <!-- Build dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <!-- Runtime dependencies -->
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>turtlesim</build_depend>
+  <build_depend>message_generation</build_depend>
+  
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>turtlesim</build_export_depend>
+  
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>turtlesim</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <!-- Export tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+</package>
