@@ -20,13 +20,13 @@ msg.linear_x = 1.0
 rate = rospy.Rate(1)
 
 # 添加启动信息
-rospy.loginfo("TurtleVelocity Publisher 节点已启动")
-rospy.loginfo("正在发布速度消息: linear_x = %.2f", msg.linear_x)
+rospy.loginfo("TurtleVelocity Publisher node started")
+rospy.loginfo("Publishing velocity message: linear_x = %.2f", msg.linear_x)
 
 # step5.发布消息
 count = 0
 while not rospy.is_shutdown():
     pub.publish(msg)
     count += 1
-    rospy.loginfo("已发布第 %d 条消息: linear_x = %.2f", count, msg.linear_x)
+    rospy.loginfo("Published message #%d: linear_x = %.2f", count, msg.linear_x)
     rate.sleep()

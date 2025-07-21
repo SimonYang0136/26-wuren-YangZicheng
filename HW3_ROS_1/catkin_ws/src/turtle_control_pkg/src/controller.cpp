@@ -80,7 +80,7 @@ public:
         static int count = 0;
         if (++count % 10 == 0)  // 每10次打印一次，避免刷屏
         {
-            ROS_INFO("控制小乌龟 - 线速度: %.3f，角速度: %.3f", 
+            ROS_INFO("Turtle Control - Linear: %.3f, Angular: %.3f", 
                     current_linear_vel_, angular_velocity_);
         }
     }
@@ -90,8 +90,8 @@ public:
      */
     void run()
     {
-        ROS_INFO("控制器等待TurtleVelocity消息输入...");
-        ROS_INFO("采用事件驱动模式：收到消息立即发布控制命令");
+        ROS_INFO("Controller waiting for TurtleVelocity messages...");
+        ROS_INFO("Event-driven mode: publish control commands upon receiving messages");
         
         // 纯事件驱动：只处理回调，不需要固定频率
         ros::spin();  // 等待并处理回调函数，替换 spinOnce() + rate.sleep()
