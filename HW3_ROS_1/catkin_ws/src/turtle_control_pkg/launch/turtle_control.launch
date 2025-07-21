@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 加载参数文件 -->
+    <rosparam file="$(find turtle_control_pkg)/config/param.yaml" command="load" />
+    
+    <!-- 启动turtlesim节点 -->
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen" />
+    
+    <!-- 启动Python发布器 -->
+    <node pkg="turtle_control_pkg" type="TurtleVelocity_publisher.py" name="turtle_velocity_publisher" output="screen" />
+    
+    <!-- 启动C++控制器 -->
+    <node pkg="turtle_control_pkg" type="controller" name="turtle_velocity_controller" output="screen" />
+    
+    <!-- 打印启动信息 -->
+    <param name="launch_info" value="turtle_control_system_started" />
+    
+</launch>

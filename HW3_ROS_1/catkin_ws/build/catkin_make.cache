@@ -1,0 +1,2 @@
+turtle_control_pkg
+-DCATKIN_DEVEL_PREFIX=/home/simon/Desktop/Homeworks/HW3_ROS_1/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/simon/Desktop/Homeworks/HW3_ROS_1/catkin_ws/install -G Unix Makefiles
