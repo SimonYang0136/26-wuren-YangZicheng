@@ -1,20 +1,8 @@
-# Custom message for turtle velocity control
-# This message contains velocity information for the turtle
+# 任务1自定义消息: 乌龟线速度（简化版）
+# 用于任务1发布线速度，任务3接收使用
 
 # Header for timestamp and frame information
 std_msgs/Header header
 
-# Linear velocity components
+# 任务1发布的线速度
 float32 linear_x
-float32 linear_y
-
-# Angular velocity
-float32 angular_z
-
-# Additional control parameters
-float32 velocity_magnitude
-bool is_emergency_stop
-
-# Trajectory information
-string trajectory_type
-float32 trajectory_progress

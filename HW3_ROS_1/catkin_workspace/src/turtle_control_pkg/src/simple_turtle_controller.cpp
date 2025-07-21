@@ -6,7 +6,7 @@
 
 #include <ros/ros.h>
 #include <geometry_msgs/Twist.h>
-#include <std_msgs/Float32.h>
+#include <turtle_control_pkg/TurtleVelocity.h>
 
 class SimpleTurtleController
 {
@@ -31,7 +31,7 @@ public:
         // 任务2: 从YAML读取固定角速度
         nh_.param("/turtle_params/angular_motion/angular_velocity", angular_velocity_, 0.5);
         
-        // 初始化订阅器 - 接收任务1的线速度
+        // 初始化订阅器 - 接收任务1的TurtleVelocity消息
         linear_vel_sub_ = nh_.subscribe("/turtle_linear_velocity", 10, 
                                        &SimpleTurtleController::linearVelocityCallback, this);
         
@@ -43,11 +43,11 @@ public:
     }
     
     /**
-     * @brief 接收任务1发布的线速度
+     * @brief 接收任务1发布的TurtleVelocity消息
      */
-    void linearVelocityCallback(const std_msgs::Float32::ConstPtr& msg)
+    void linearVelocityCallback(const turtle_control_pkg::TurtleVelocity::ConstPtr& msg)
     {
-        current_linear_vel_ = msg->data;
+        current_linear_vel_ = msg->linear_x;
         
         // 任务3核心：组合线速度和角速度
         combineVelocitiesAndControl();
