@@ -1,0 +1,36 @@
+<!--
+任务4: Launch文件 - 加载参数至参数服务器，并启动所有用到的节点
+按照你的理解重新设计的启动文件
+-->
+
+<launch>
+    <!-- 任务2: 加载YAML参数到参数服务器 -->
+    <rosparam file="$(find turtle_control_pkg)/config/turtle_params.yaml" command="load" />
+    
+    <!-- 启动turtlesim仿真环境 -->
+    <node name="turtlesim" pkg="turtlesim" type="turtlesim_node" output="screen" />
+    
+    <!-- 任务1: 启动Python线速度发布器 -->
+    <node name="simple_linear_publisher" 
+          pkg="turtle_control_pkg" 
+          type="simple_linear_publisher.py" 
+          output="screen">
+        <remap from="/turtle_linear_velocity" to="/turtle_linear_velocity" />
+    </node>
+    
+    <!-- 任务3: 启动C++控制器 -->
+    <node name="simple_turtle_controller" 
+          pkg="turtle_control_pkg" 
+          type="simple_turtle_controller" 
+          output="screen">
+        <remap from="/turtle1/cmd_vel" to="/turtle1/cmd_vel" />
+        <remap from="/turtle1/pose" to="/turtle1/pose" />
+    </node>
+    
+    <!-- 信息显示 -->
+    <node name="rqt_console" pkg="rqt_console" type="rqt_console" required="false" />
+    
+    <!-- 参数显示 -->
+    <node name="dynamic_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" required="false" />
+    
+</launch>

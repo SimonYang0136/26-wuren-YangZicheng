@@ -59,26 +59,14 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-## Declare C++ executables
-add_executable(turtle_controller src/turtle_controller.cpp)
-add_executable(custom_publisher src/custom_publisher.cpp)
-add_executable(custom_subscriber src/custom_subscriber.cpp)
+## Declare a C++ executable
+add_executable(simple_turtle_controller src/simple_turtle_controller.cpp)
 
 ## Add cmake target dependencies of the executable
-add_dependencies(turtle_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(custom_publisher ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(custom_subscriber ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(simple_turtle_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(turtle_controller
-  ${catkin_LIBRARIES}
-)
-
-target_link_libraries(custom_publisher
-  ${catkin_LIBRARIES}
-)
-
-target_link_libraries(custom_subscriber
+target_link_libraries(simple_turtle_controller
   ${catkin_LIBRARIES}
 )
 
@@ -88,18 +76,18 @@ target_link_libraries(custom_subscriber
 
 ## Mark executable scripts (Python etc.) for installation
 catkin_install_python(PROGRAMS
-  scripts/turtle_velocity_publisher.py
+  scripts/simple_linear_publisher.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 ## Mark executables for installation
-install(TARGETS turtle_controller custom_publisher custom_subscriber
+install(TARGETS simple_turtle_controller
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 ## Mark other files for installation
 install(FILES
-  launch/turtle_control.launch
+  launch/simple_turtle_control.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
 
