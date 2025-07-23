@@ -36,7 +36,7 @@ class ConeCounterVisualizer:
         rospy.init_node('cone_counter_visualizer')
         
         # 保存消息的header信息，后面的marker需要用到
-        self.msg_header = None  
+        self.msg_header = None
 
         # 锥桶计数器
         self.cone_counts = defaultdict(int)  # 颜色: 数量
@@ -73,6 +73,7 @@ class ConeCounterVisualizer:
         """处理锥桶检测消息"""
         # 保存消息的header信息
         self.msg_header = msg.header
+        
         # 清空当前帧数据
         self.current_cones = []
         
@@ -106,7 +107,7 @@ class ConeCounterVisualizer:
         
         for i, cone in enumerate(self.current_cones): # 用当前帧的锥桶列表创建迭代器
             marker = Marker()
-            marker.header.frame_id = self.msg_header.frame_id # 坐标系  
+            marker.header.frame_id = self.msg_header.frame_id # 坐标系 
             # 如何确定坐标系：坐标系是写在Header里的
             # 查看锥桶检测消息的header信息：
             # rostopic echo /perception/lidar/cone_side -n 1，这是只看一条的指令

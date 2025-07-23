@@ -112,38 +112,38 @@ fsd_common_msgs/CMakeFiles/fsd_common_msgs_generate_messages_cpp: /home/simon/De
 
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /opt/ros/noetic/share/std_msgs/msg/Float32.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/Cone.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /opt/ros/noetic/share/std_msgs/msg/String.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/Cone.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetections.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from fsd_common_msgs/ConeDetections.msg"
 	cd /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs && /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg -Ifsd_common_msgs:/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Ican_msgs:/opt/ros/noetic/share/can_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p fsd_common_msgs -o /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/Map.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /opt/ros/noetic/share/std_msgs/msg/Float32.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/Cone.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /opt/ros/noetic/share/std_msgs/msg/String.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/Cone.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/Map.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from fsd_common_msgs/Map.msg"
 	cd /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs && /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/Map.msg -Ifsd_common_msgs:/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Ican_msgs:/opt/ros/noetic/share/can_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p fsd_common_msgs -o /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ControlCommand.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ControlCommand.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/ControlCommand.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ControlCommand.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ControlCommand.h: /opt/ros/noetic/share/std_msgs/msg/Float32.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ControlCommand.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ControlCommand.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from fsd_common_msgs/ControlCommand.msg"
 	cd /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs && /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/ControlCommand.msg -Ifsd_common_msgs:/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Ican_msgs:/opt/ros/noetic/share/can_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p fsd_common_msgs -o /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/CarState.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/CarState.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/CarState.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/CarState.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/CarState.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/CarStateDt.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/CarState.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/CarState.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose2D.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/CarState.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from fsd_common_msgs/CarState.msg"
@@ -166,10 +166,10 @@ fsd_common_msgs/CMakeFiles/fsd_common_msgs_generate_messages_cpp: /home/simon/De
 
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/TrajectoryPoint.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/TrajectoryPoint.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/TrajectoryPoint.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/TrajectoryPoint.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/TrajectoryPoint.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/CarStateDt.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/TrajectoryPoint.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/CarState.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/TrajectoryPoint.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/TrajectoryPoint.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose2D.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/TrajectoryPoint.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/CarStateDt.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/TrajectoryPoint.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from fsd_common_msgs/TrajectoryPoint.msg"
 	cd /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs && /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/TrajectoryPoint.msg -Ifsd_common_msgs:/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Ican_msgs:/opt/ros/noetic/share/can_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p fsd_common_msgs -o /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -263,11 +263,11 @@ fsd_common_msgs/CMakeFiles/fsd_common_msgs_generate_messages_cpp: /home/simon/De
 
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /opt/ros/noetic/share/std_msgs/msg/Float32.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /opt/ros/noetic/share/std_msgs/msg/String.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/ConeDetectionsDbscan.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating C++ code from fsd_common_msgs/ConeDetectionsDbscan.msg"
 	cd /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs && /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg -Ifsd_common_msgs:/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Ican_msgs:/opt/ros/noetic/share/can_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p fsd_common_msgs -o /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -282,8 +282,8 @@ fsd_common_msgs/CMakeFiles/fsd_common_msgs_generate_messages_cpp: /home/simon/De
 
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetections.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetections.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetections.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetections.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetections.h: /opt/ros/noetic/share/std_msgs/msg/Float32.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetections.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetections.h: /opt/ros/noetic/share/std_msgs/msg/String.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetections.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetections.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -293,21 +293,21 @@ fsd_common_msgs/CMakeFiles/fsd_common_msgs_generate_messages_cpp: /home/simon/De
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeTrack.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeTrack.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeTrack.h: /opt/ros/noetic/share/std_msgs/msg/Float32.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeTrack.h: /opt/ros/noetic/share/std_msgs/msg/UInt8.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeTrack.h: /opt/ros/noetic/share/std_msgs/msg/String.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeTrack.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeTrack.h: /opt/ros/noetic/share/std_msgs/msg/UInt8.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeTrack.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating C++ code from fsd_common_msgs/YoloConeTrack.msg"
 	cd /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs && /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg -Ifsd_common_msgs:/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Ican_msgs:/opt/ros/noetic/share/can_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p fsd_common_msgs -o /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /opt/ros/noetic/share/std_msgs/msg/Float32.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /opt/ros/noetic/share/std_msgs/msg/UInt8.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /opt/ros/noetic/share/std_msgs/msg/String.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /opt/ros/noetic/share/std_msgs/msg/UInt8.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/YoloConeDetectionsTrack.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating C++ code from fsd_common_msgs/YoloConeDetectionsTrack.msg"
 	cd /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs && /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg -Ifsd_common_msgs:/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Ican_msgs:/opt/ros/noetic/share/can_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p fsd_common_msgs -o /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -321,12 +321,12 @@ fsd_common_msgs/CMakeFiles/fsd_common_msgs_generate_messages_cpp: /home/simon/De
 
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/nav_msgs/msg/Path.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs/SkidpadGlobalCenterLine.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating C++ code from fsd_common_msgs/SkidpadGlobalCenterLine.msg"
 	cd /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs && /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg -Ifsd_common_msgs:/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/src/fsd_common_msgs/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Ican_msgs:/opt/ros/noetic/share/can_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p fsd_common_msgs -o /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel/include/fsd_common_msgs -e /opt/ros/noetic/share/gencpp/cmake/..
