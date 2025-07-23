@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 启动锥桶统计和可视化节点 -->
+    <node pkg="cone_analysis" type="cone_counter_visualizer.py" name="cone_counter_visualizer" output="screen">
+        <param name="queue_size" value="10" />
+    </node>
+    
+    <!-- 可选：启动rviz进行可视化 -->
+    <node pkg="rviz" type="rviz" name="cone_rviz" 
+          args="-d $(find cone_analysis)/config/cone_visualization.rviz" 
+          output="screen" 
+          required="false" />
+    
+    <!-- 打印启动信息 -->
+    <param name="launch_info" value="cone_analysis_system_started" />
+    
+</launch>

@@ -1,0 +1,2 @@
+cone_analysis:fsd_common_msgs
+-DCATKIN_DEVEL_PREFIX=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/install -G Unix Makefiles

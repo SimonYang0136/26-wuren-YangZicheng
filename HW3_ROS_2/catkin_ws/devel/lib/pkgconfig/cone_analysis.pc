@@ -1,0 +1,8 @@
+prefix=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel
+
+Name: cone_analysis
+Description: Description of cone_analysis
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
