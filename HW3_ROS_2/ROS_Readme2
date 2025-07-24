@@ -1,0 +1,138 @@
+1.功能包拿到，放到catkin_ws/src文件夹下
+catkin_make
+-- Could NOT find can_msgs (missing: can_msgs_DIR)
+-- Could not find the required component 'can_msgs'. The following CMake error indicates that you either need to install the package with the same name or change your environment so that it can be found.
+CMake Error at /opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake:83 (find_package):
+  Could not find a package configuration file provided by "can_msgs" with any
+  of the following names:
+
+    can_msgsConfig.cmake
+    can_msgs-config.cmake
+
+  Add the installation prefix of "can_msgs" to CMAKE_PREFIX_PATH or set
+  "can_msgs_DIR" to a directory containing one of the above files.  If
+  "can_msgs" provides a separate development package or SDK, be sure it has
+  been installed.
+  
+sudo apt update && sudo apt install -y ros-noetic-can-msgs
+2.数据包分析
+	包里都有哪些数据？这个项目都有哪些话题？
+rosbag info src/fsd_common_msgs/bag/lidar_cone_side_\&_slam_state.bag
+	*rosbag简介：
+	rosbag是用于录制和回放 ROS 主题的一个工具集，本质也是ros的节点；当录制时，rosbag是一个订阅节点，可以订阅话题消息并将订阅到的数据写入磁盘文件；当重放时，rosbag是一个发布节点，可以读取磁盘文件，发布文件中的话题消息
+	*但是rosnode info rosbag是不行的。原因：
+rosnode list
+/play_1753173787438014168
+/rosout
+/rostopic_72056_1753173389151
+/rostopic_72550_1753173728864
+	rosbag的实际节点名称是/play_时间戳
+	剩下为什么有两个rostopic: 当运行 rostopic 命令时，ROS实际上会创建一个临时节点来执行操作
+	但是他们的最后一行contacting node http://Yang:33363/ ...
+ERROR: Communication with node[http://Yang:33363/] failed!
+	说明这是断开连接的残留节点，清理：rosnode cleanup
+	
+types:       fsd_common_msgs/CarState       [be929b6a6d1d1d2c80065a8e530992fd]
+             fsd_common_msgs/ConeDetections [8d208cc8d9a8d2c9f26b340c91ec270a]
+             rosgraph_msgs/Log              [acffd30cd6b6de30f120938c17c593fb]
+topics:      /estimation/slam/state        984 msgs    : fsd_common_msgs/CarState      
+             /perception/lidar/cone_side   328 msgs    : fsd_common_msgs/ConeDetections
+             /rosout                         3 msgs    : rosgraph_msgs/Log             
+             /rosout_agg                     3 msgs    : rosgraph_msgs/Log
+看起来我们要找的是/perception/lidar/cone_side话题的fsd_common_msgs/ConeDetections,如何验证？
+回顾基础部分，在播放包的时候rostopic info /perception/lidar/cone_side
+Type: fsd_common_msgs/ConeDetections
+
+rosmsg show fsd_common_msgs/ConeDetections
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+fsd_common_msgs/Cone[] cone_detections
+  geometry_msgs/Point position
+    float64 x
+    float64 y
+    float64 z
+  std_msgs/String color
+    string data
+  std_msgs/Float32 poseConfidence
+    float32 data
+  std_msgs/Float32 colorConfidence
+    float32 data
+	那么锥桶的数据结构就有了：
+		每个锥桶有位置 position (x,y)
+		颜色信息 color: 'b'=蓝色, 'y'=黄色, 'o'=橙色
+		检测置信度信息
+3.设计解决方案
+	计数器订阅/perception/lidar/cone_side话题，遍历cone列表类型的cone_detections
+	(是msg.cone_detections，不是msg.ConeDetections.cone_detections!)(?)
+	的每一个cone，对其cone.color.data属性计数，发布颜色和位置消息给rviz
+	处理列表的话，python可能好写点。
+	*python订阅器+发布器模版
+4.rviz信息可视化
+	add - by topic -show unvisualizable topics，会发现/cone_side是不可视化的
+	哪些数据是可视化的？我们要发布什么消息给rviz？
+	http://wiki.ros.org/visualization_msgs，中文资料真没找到……
+	# 最常用的可视化消息
+visualization_msgs/Marker        # 单个3D对象
+visualization_msgs/MarkerArray   # 多个3D对象 - 用这个
+sensor_msgs/PointCloud2         # 点云数据
+nav_msgs/Path                   # 路径可视化
+geometry_msgs/PoseArray         # 位姿数组
+	
+	rosmsg show visualization_msgs/MarkerArray
+visualization_msgs/Marker[] markers
+以下注释来自官网
+  uint8 ARROW=0
+  uint8 CUBE=1
+  uint8 SPHERE=2
+  uint8 CYLINDER=3
+  uint8 LINE_STRIP=4
+  uint8 LINE_LIST=5
+  uint8 CUBE_LIST=6
+  uint8 SPHERE_LIST=7
+  uint8 POINTS=8
+  uint8 TEXT_VIEW_FACING=9
+  uint8 MESH_RESOURCE=10
+  uint8 TRIANGLE_LIST=11
+
+  uint8 ADD=0
+  uint8 MODIFY=0
+  uint8 DELETE=2
+  uint8 DELETEALL=3
+
+  Header header                        # header for time/frame information
+  string ns                            # Namespace to place this object in... used in conjunction with id to create a unique name for the object
+  int32 id                           # object ID useful in conjunction with the namespace for manipulating and deleting the object later
+  int32 type                         # Type of object
+  int32 action                         # 0 add/modify an object, 1 (deprecated), 2 deletes an object, 3 deletes all objects
+  geometry_msgs/Pose pose                 # Pose of the object
+  geometry_msgs/Vector3 scale             # Scale of the object 1,1,1 means default (usually 1 meter square)
+  std_msgs/ColorRGBA color             # Color [0.0-1.0]
+  duration lifetime                    # How long the object should last before being automatically deleted.  0 means forever
+  bool frame_locked                    # If this marker should be frame-locked, i.e. retransformed into its frame every timestep
+
+#Only used if the type specified has some use for them (eg. POINTS, LINE_STRIP, ...)
+  geometry_msgs/Point[] points
+#Only used if the type specified has some use for them (eg. POINTS, LINE_STRIP, ...)
+#number of colors must either be 0 or equal to the number of points
+#NOTE: alpha is not yet used
+  std_msgs/ColorRGBA[] colors
+
+# NOTE: only used for text markers
+  string text
+
+# NOTE: only used for MESH_RESOURCE markers
+  string mesh_resource
+  bool mesh_use_embedded_materials
+  	
+  	这些字段全赋值就是了，注释写在代码里了
+  	
+	官方教程只有cpp, python呢？
+	from visualization_msgs.msg import Marker, MarkerArray 就行了
+	
+完成后，可以file - save config as保存默认rviz启动配置到config下
+  roslaunch cone_analysis cone_analysis.launch
+  
+  /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/run_cone_analysis.sh
+  /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/play_bag.sh

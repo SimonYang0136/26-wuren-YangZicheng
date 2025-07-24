@@ -1,0 +1,25 @@
+catkin_create_pkg project_image rospy roscpp std_msgs fsd_common_msgs visualization_msgs geometry_msgs	*不能写eigen3？
+在cmakelists里加include_directories("/usr/include/eigen3")
+
+[camera_x]   [ r11 r12 r13 t1 ]   [x]
+[camera_y] = [ r21 r22 r23 t2 ] * [y]
+[camera_z]   [ r31 r32 r33 t3 ]   [z]
+                                  [1]
+ 展开后：
+      camera_x = r11*x + r12*y + r13*z + t1*1
+      camera_y = r21*x + r22*y + r23*z + t2*1
+      camera_z = r31*x + r32*y + r33*z + t3*1
+      
+https://wiki.ros.org/rviz/DisplayTypes
+用sensor_msgs/Image显示图像
+
+如何在rviz中可视化投影结果？
+利用cv_bridge将cv::Mat转化为sensor_msgs::ImagePtr
+
+
+pcl库的资料好难查……
+指针有空再多看几遍
+
+*当一个包里出现多个可执行文件时，cmakelists应该：
+add_executable，add_dependencies,target_link_libraries有几个节点写几次，每个节点名字写清楚，不要$自动获取；
+

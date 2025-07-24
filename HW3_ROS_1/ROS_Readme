@@ -1,0 +1,221 @@
+https://github.com/SimonYang0136/26-wuren-YangZicheng
+任务总览：
+a.创建py文件，自定义乌龟线速度消息类型并发布
+b.创建yaml文件，写入除1之外所有用到的固定参数（例如乌龟角速度、轨迹的参数等）
+c.创建cpp文件，接收1发布的自定义消息并从参数服务器读取参数，控制乌龟运动
+d.创建launch文件，加载参数至参数服务器，并启动所有用到的节点
+
+0.工作空间的创建
+	mkdir -p catkin_ws/src
+	cd catkin_ws
+	catkin_make
+	生成build,devel,src三个文件夹，其中我们只负责src,剩下的自动生成；src底下放packages
+	cd src
+	catkin_create_pkg turtle_control_pkg rospy roscpp std_msgs
+	rospy,roscpp是对两种语言的支持，std_msgs是标准消息包
+	
+1.ROS基本概念和操作
+	节点 (Node): 执行特定功能的程序
+	话题 (Topic): 节点间通信的通道
+	消息 (Message): 在话题上传输的数据格式
+	发布器 (Publisher): 发送消息的节点
+	订阅器 (Subscriber): 接收消息的节点
+	rosrun turtlesim turtlesim_node 节点，
+	这个节点发布和订阅的话题用rosnode info /turtlesim列出(rostopic list看不到发出还是接收)
+	--------------------------------------------------------------------------------
+Node [/turtlesim]
+Publications: 
+ * /rosout [rosgraph_msgs/Log]
+ * /turtle1/color_sensor [turtlesim/Color]
+ * /turtle1/pose [turtlesim/Pose]
+
+Subscriptions: 
+ * /turtle1/cmd_vel [geometry_msgs/Twist]
+
+Services: 
+ * /clear
+ * /kill
+ * /reset
+ * /spawn
+ * /turtle1/set_pen
+ * /turtle1/teleport_absolute
+ * /turtle1/teleport_relative
+ * /turtlesim/get_loggers
+ * /turtlesim/set_logger_level
+ 
+	需要关注的是Subscriptions下的cmd_vel(command_velocity, 速度指令)
+	执行rostopic info /turtle1/cmd_vel
+	
+	Type: geometry_msgs/Twist
+
+Publishers: None
+
+Subscribers: 
+ * /turtlesim (http://Yang:36299/)
+ 	这个话题的消息类型为geometry_msgs/Twist,属于标准数据类型
+	 	标准类型：{标准包名}_msgs/{消息名}
+		自定义类型：{你的包名}/{消息名}
+ 	想要查看某个消息类型的具体数据结构: rosmsg show geometry_msgs/Twist
+ geometry_msgs/Vector3 linear
+  float64 x
+  float64 y
+  float64 z
+geometry_msgs/Vector3 angular
+  float64 x
+  float64 y
+  float64 z
+	本任务需要线速度，那么自定义消息类型包含的就是geometry_msgs/Vector3 linear
+							数据类型	     字段
+	长得有点奇怪？看看geometry_msgs/Vector3的定义  rosmsg show geometry_msgs/Vector3
+float64 x
+float64 y
+float64 z
+
+可以类比C++里的结构体嵌套:
+struct Vector3 {
+    double x;
+    double y; 
+    double z;
+};
+
+struct Twist {
+    Vector3 linear;   // 线速度向量
+    Vector3 angular;  // 角速度向量
+};
+
+// 使用时
+Twist cmd;
+cmd.linear.x = 1.0;    // 前进速度
+cmd.angular.z = 0.5;   // 转向速度
+所以我们其实是负责传参给x,y,z,故下方.msg里写的变量是x,y,z
+
+2.自定义消息基本步骤
+	2.1 创建.msg文件
+	在包目录下创建msg文件夹，创建.msg文件
+	定义.msg文件，每一个变量占一行，格式为“变量类型+变量名”；
+	*问题：写geometry_msgs/Vector3 linear 还是写float64 linear_x?
+	小乌龟运动：只有x方向线速度,没有y(侧移)和z(空间上下移动)
+		    只有z方向角速度，没有x(横滚)和y(俯仰)
+	
+	2.2 修改package.xml文件
+	找到功能包目录下的package.xml文件，添加如下内容：
+	<build_depend>message_generation</build_depend>
+	<exec_depend>message_runtime</exec_depend>
+	这两行代码分别是编译依赖和执行依赖，目的是为了让自定义的msg文件能够转换成编程语言所需的源代码
+	2.3 修改Cmakelists.txt文件
+	在find_package()中添加message编译时依赖模块(即message_generation)；
+	在catkin_package()中添加message运行时依赖模块(即取消CATKIN_DEPENDS的注释，添加message_runtime)；
+	在add_message_files()中添加msg文件名(取消全部注释)；
+	确保generate_msgs()被调用，生成消息依赖于std_msgs（取消全部注释）
+	2.4 编译
+	所有编译工作都要在catkin_ws文件夹下编译：
+	cd catkin_ws/
+	catkin_make
+
+3. .py发布器编写
+	模版有了，如何“组织被发布的消息，编写发布逻辑并发布消息”？
+	任务3里需要控制乌龟运动，发布器和控制器又是什么关系？
+	拆分一下任务。
+	发布器节点               控制器节点               小乌龟节点
+┌─────────────┐         ┌─────────────┐         ┌─────────────┐
+│custom_      │ 发布    │turtle_      │ 发布    │turtlesim    │
+│publisher    ├────────→│controller   ├────────→│             │
+│.py         │TurtleVel│.cpp         │Twist    │             │
+└─────────────┘         └─────────────┘         └─────────────┘
+                                			↑
+                        从参数服务器读取参数
+                        ┌─────────────┐
+                        │turtle_      │
+                        │params.yaml  │
+                        └─────────────┘
+	从“控制运动”的角度，只要控制器节点直接生成运动也行，但是我们的任务要求写发布器。
+	写完发布器以后，修改CMakeLists的catkin_install_python,添加文件路径
+	如果是.cpp文件，则是add_executable添加文件路径,
+	add_dependencies,target_link_libraries解除注释
+	路径加到src/xxx.cpp就行
+检查发布器：
+1号终端：roscore
+2号终端：rosrun turtle_control_pkg TurtleVelocity_publisher.py
+[rospack] Error: package 'turtle_control_pkg' not found
+原因:工作空间没有正确source(是不是可以预先配置的？)
+在需要检查发布器的终端source devel/setup.bash && echo $ROS_PACKAGE_PATH (绝对路径)
+*ROS节点默认情况下不打印任何信息，需要添加rospy.loginfo("文本")
+
+4.控制器设计
+	控制器的基本任务:
+		订阅任务1的消息：接收发布的TurtleVelocity
+		读取任务2的参数：从YAML获取角速度
+		发布控制命令：组合成Twist消息给小乌龟
+	是一个既订阅又发布的节点。
+		订阅方模板：等待消息 → 回调函数处理
+		发布方模板：创建消息 → 发布消息
+		组合版本：等待消息 → 回调函数中发布新消息
+		此时，回调函数里需要发布者，需要main里读取的角速度参数
+		但是发布者和角速度参数都定义在main里，回调函数用不了。
+		组合版本模版 方案1：全局变量创建空的发布者
+#include "ros/ros.h"
+#include "turtle_control_pkg/TurtleVelocity.h"
+#include "geometry_msgs/Twist.h"
+
+// 全局变量声明阶段
+ros::Publisher pub;                    // 1. 程序启动时创建（空的）
+double angular_velocity;        // 2. 程序启动时创建(不赋值)(?)
+
+// 回调函数定义
+void callback(const turtle_control_pkg::TurtleVelocity::ConstPtr& msg) {
+    // 这个函数在main之后才会被调用
+    geometry_msgs::Twist cmd;
+    cmd.linear.x = msg->linear_x;
+    cmd.angular.z = angular_velocity;  // 使用全局变量
+    pub.publish(cmd);                  // 使用全局发布者
+}
+
+int main(int argc, char *argv[]) {
+    // main函数执行
+}
+
+
+int main(int argc, char *argv[]) {
+    // 步骤1：初始化ROS
+    ros::init(argc, argv, "controller");
+    
+    // 步骤2：创建NodeHandle
+    ros::NodeHandle nh;
+    
+    // 步骤3：读取参数（可选）
+    nh.param("/turtle_params/angular_motion/angular_velocity", angular_velocity, 0.5);
+    
+    // 语法：nh_.param(参数路径, 目标变量, 默认值)
+    // ROS在参数服务器中查找 "/turtle_params/angular_motion/angular_velocity"
+    // 如果找到了：angular_velocity_ = 参数服务器中的值  (比如从YAML读到的值)
+    // 如果没找到：angular_velocity_ = 0.5  (使用默认值)
+
+    // 步骤4：配置全局发布者
+    pub = nh.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 10);
+    //  ↑ 现在全局变量pub才真正连接到ROS
+    
+    // 步骤5：创建订阅者并注册回调
+    ros::Subscriber sub = nh.subscribe("/turtle_linear_velocity", 10, callback);
+    //                                                               ↑
+    //                    告诉ROS："收到消息时调用全局函数callback"
+    
+    // 步骤6：进入等待循环
+    ROS_INFO("等待消息...");
+    ros::spin();  // 开始等待消息
+    
+    return 0;
+}
+
+		问题：全局污染
+		方案2：写成类的private变量(推荐)
+		太长了，见最终代码
+		
+5. .yaml文件的编写
+	.yaml只写了角速度，轨迹参数功能未实现。
+	
+6.编写.launch文件
+
+检验前，需要设置python文件可执行权限: chmod -x
+如果移动了路径，把build和devel删了再catkin_make
+
+roslaunch turtle_control_pkg turtle_control.launch
