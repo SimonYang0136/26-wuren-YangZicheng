@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"project_image\"
 
-CXX_INCLUDES = -I/usr/include/eigen3 -I/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/devel/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /usr/include/opencv4
+CXX_INCLUDES = -I/usr/include/eigen3 -I/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/devel/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include/opencv4
 
 CXX_FLAGS = 
 

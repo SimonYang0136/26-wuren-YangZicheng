@@ -3,12 +3,14 @@
 #include <geometry_msgs/Point.h>
 #include <sensor_msgs/Image.h>
 #include <std_msgs/Header.h>
-#include <cv_bridge/cv_bridge.h>
+
 #include <Eigen/Eigen>
 #include <Eigen/Dense>
 #include <Eigen/Geometry>
 #include <Eigen/Eigenvalues>
+
 #include <opencv2/opencv.hpp>
+#include <cv_bridge/cv_bridge.h>
 class Projection{
     private:
         ros::NodeHandle nh_;
@@ -37,7 +39,7 @@ class Projection{
             0.0, 0.0, 1.0;
         
         // 初始化订阅器和发布器
-        position_sub_ = nh_.subscribe("/perception/lidar/cone_detections", 10, &Projection::ProjectionCallback, this);
+        position_sub_ = nh_.subscribe("/perception/fusion/cone_fusion", 10, &Projection::ProjectionCallback, this);
         image_pub_ = nh_.advertise<sensor_msgs::Image>("/projected_image", 10);
         
         ROS_INFO("Projection node initialized.");

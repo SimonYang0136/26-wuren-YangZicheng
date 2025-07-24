@@ -61,8 +61,6 @@ sensor_msgs/Image.h
 -
 std_msgs/Header.h
 -
-cv_bridge/cv_bridge.h
--
 Eigen/Eigen
 -
 Eigen/Dense
@@ -72,6 +70,8 @@ Eigen/Geometry
 Eigen/Eigenvalues
 -
 opencv2/opencv.hpp
+-
+cv_bridge/cv_bridge.h
 -
 
 /opt/ros/noetic/include/cv_bridge/cv_bridge.h

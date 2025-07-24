@@ -16,11 +16,10 @@ find_package(catkin REQUIRED COMPONENTS
   visualization_msgs
   sensor_msgs
   cv_bridge
-  image_transport
 )
 
-## Find OpenCV
-find_package(OpenCV REQUIRED)
+## System dependencies are found with CMake's conventions
+# find_package(Boost REQUIRED COMPONENTS system)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -155,7 +154,6 @@ add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catk
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}_node
    ${catkin_LIBRARIES}
-   ${OpenCV_LIBRARIES}
 )
 
 #############
