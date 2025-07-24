@@ -153,6 +153,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/fsd_common_msgs/cmake_install.cmake")
   include("/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/cone_analysis/cmake_install.cmake")
+  include("/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/project_image/cmake_install.cmake")
 
 endif()
 

@@ -1330,6 +1330,19 @@ visualization_msgs_generate_messages_cpp/fast:
 	$(MAKE) $(MAKESILENT) -f cone_analysis/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make cone_analysis/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
 .PHONY : visualization_msgs_generate_messages_cpp/fast
 
+#=============================================================================
+# Target rules for targets named project_image_node
+
+# Build rule for target.
+project_image_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image_node
+.PHONY : project_image_node
+
+# fast build rule for target.
+project_image_node/fast:
+	$(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/project_image_node.dir/build.make project_image/CMakeFiles/project_image_node.dir/build
+.PHONY : project_image_node/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1431,6 +1444,7 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... project_image_node"
 .PHONY : help
 
 

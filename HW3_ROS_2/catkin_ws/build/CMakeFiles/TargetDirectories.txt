@@ -128,3 +128,11 @@
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/cone_analysis/CMakeFiles/edit_cache.dir
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/cone_analysis/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
 /home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/cone_analysis/CMakeFiles/rebuild_cache.dir
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/project_image/CMakeFiles/install/strip.dir
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/project_image/CMakeFiles/install/local.dir
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/project_image/CMakeFiles/install.dir
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/project_image/CMakeFiles/list_install_components.dir
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/project_image/CMakeFiles/test.dir
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/project_image/CMakeFiles/edit_cache.dir
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/project_image/CMakeFiles/project_image_node.dir
+/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/build/project_image/CMakeFiles/rebuild_cache.dir

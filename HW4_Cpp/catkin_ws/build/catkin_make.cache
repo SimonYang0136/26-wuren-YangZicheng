@@ -1,0 +1,2 @@
+fsd_common_msgs:project_image
+-DCATKIN_DEVEL_PREFIX=/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/install -G Unix Makefiles

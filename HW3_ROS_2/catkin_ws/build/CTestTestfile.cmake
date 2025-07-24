@@ -7,3 +7,4 @@
 subdirs("gtest")
 subdirs("fsd_common_msgs")
 subdirs("cone_analysis")
+subdirs("project_image")

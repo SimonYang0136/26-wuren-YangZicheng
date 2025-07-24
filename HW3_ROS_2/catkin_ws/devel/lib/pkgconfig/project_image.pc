@@ -1,0 +1,8 @@
+prefix=/home/simon/Desktop/Homeworks/HW3_ROS_2/catkin_ws/devel
+
+Name: project_image
+Description: Description of project_image
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
