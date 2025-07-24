@@ -16,7 +16,15 @@ find_package(catkin REQUIRED COMPONENTS
   visualization_msgs
   sensor_msgs
   cv_bridge
+  pcl_conversions
+  pcl_ros
 )
+
+# 查找PCL库
+find_package(PCL REQUIRED)
+
+# 查找OpenCV库
+find_package(OpenCV REQUIRED)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -124,7 +132,11 @@ include_directories(
   "/usr/include/eigen3"
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
+  ${PCL_INCLUDE_DIRS}
 )
+
+# 添加PCL定义
+#add_definitions(${PCL_DEFINITIONS})
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
@@ -139,7 +151,16 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(${PROJECT_NAME}_node src/project_image.cpp)
+
+# 第一个可执行文件：project_image节点
+add_executable(project_image
+  src/project_image.cpp
+)
+
+# 第二个可执行文件：lidar_point节点
+add_executable(lidar_point
+  src/lidar_point.cpp
+)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -149,11 +170,21 @@ add_executable(${PROJECT_NAME}_node src/project_image.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(project_image ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(lidar_point ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(${PROJECT_NAME}_node
+
+# project_image节点的链接库
+target_link_libraries(project_image
    ${catkin_LIBRARIES}
+   ${OpenCV_LIBRARIES}
+)
+
+# lidar_point节点的链接库
+target_link_libraries(lidar_point
+   ${catkin_LIBRARIES}
+   ${PCL_LIBRARIES}
 )
 
 #############

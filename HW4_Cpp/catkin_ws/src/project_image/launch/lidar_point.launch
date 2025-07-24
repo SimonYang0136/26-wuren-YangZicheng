@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- 点云处理启动文件 -->
+    
+    <!-- 启动点云处理节点 -->
+    <node name="lidar_point_processor" 
+          pkg="project_image" 
+          type="lidar_point" 
+          output="screen">
+    </node>
+    
+    <!-- 启动RViz -->
+    <node name="rviz" 
+          pkg="rviz" 
+          type="rviz" 
+          args="-d $(find project_image)/config/lidar_visualization.rviz"
+          output="screen"/>
+    
+</launch>

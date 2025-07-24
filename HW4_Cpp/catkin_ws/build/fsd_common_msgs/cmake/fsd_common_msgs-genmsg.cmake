@@ -19,17 +19,17 @@ add_custom_target(fsd_common_msgs_generate_messages ALL)
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg" NAME_WE)
 add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg" "std_msgs/Float32:geometry_msgs/Point:std_msgs/String"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg" "std_msgs/Float32:std_msgs/String:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg" NAME_WE)
 add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg" "std_msgs/Header:std_msgs/Float32:std_msgs/String:fsd_common_msgs/Cone:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg" "fsd_common_msgs/Cone:std_msgs/Header:geometry_msgs/Point:std_msgs/Float32:std_msgs/String"
 )
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Map.msg" NAME_WE)
 add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Map.msg" "std_msgs/Header:std_msgs/Float32:std_msgs/String:fsd_common_msgs/Cone:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Map.msg" "fsd_common_msgs/Cone:std_msgs/Header:geometry_msgs/Point:std_msgs/Float32:std_msgs/String"
 )
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ControlCommand.msg" NAME_WE)
@@ -114,12 +114,12 @@ add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg" NAME_WE)
 add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg" "std_msgs/Float32:geometry_msgs/Point:std_msgs/String"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg" "std_msgs/Float32:std_msgs/String:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg" NAME_WE)
 add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg" "std_msgs/Header:std_msgs/Float32:std_msgs/String:geometry_msgs/Point:fsd_common_msgs/ConeDbscan"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg" "std_msgs/Header:geometry_msgs/Point:fsd_common_msgs/ConeDbscan:std_msgs/Float32:std_msgs/String"
 )
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg" NAME_WE)
@@ -129,17 +129,17 @@ add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetections.msg" NAME_WE)
 add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetections.msg" "fsd_common_msgs/YoloCone:std_msgs/Float32:std_msgs/Header:std_msgs/String"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetections.msg" "fsd_common_msgs/YoloCone:std_msgs/String:std_msgs/Header:std_msgs/Float32"
 )
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg" NAME_WE)
 add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg" "std_msgs/Float32:geometry_msgs/Point:std_msgs/String:std_msgs/UInt8"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg" "std_msgs/Float32:std_msgs/String:std_msgs/UInt8:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg" NAME_WE)
 add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg" "fsd_common_msgs/YoloConeTrack:std_msgs/Header:std_msgs/Float32:std_msgs/String:std_msgs/UInt8:geometry_msgs/Point"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg" "fsd_common_msgs/YoloConeTrack:std_msgs/Header:geometry_msgs/Point:std_msgs/UInt8:std_msgs/Float32:std_msgs/String"
 )
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/InsDelta.msg" NAME_WE)
@@ -149,7 +149,7 @@ add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg" NAME_WE)
 add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg" "std_msgs/Header:geometry_msgs/Pose:nav_msgs/Path:geometry_msgs/Point:geometry_msgs/Quaternion:geometry_msgs/PoseStamped"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "fsd_common_msgs" "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg" "std_msgs/Header:geometry_msgs/Point:geometry_msgs/PoseStamped:geometry_msgs/Quaternion:geometry_msgs/Pose:nav_msgs/Path"
 )
 
 #
@@ -161,19 +161,19 @@ add_custom_target(_fsd_common_msgs_generate_messages_check_deps_${_filename}
 _generate_msg_cpp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_cpp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_cpp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Map.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_cpp(fsd_common_msgs
@@ -275,13 +275,13 @@ _generate_msg_cpp(fsd_common_msgs
 _generate_msg_cpp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_cpp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_cpp(fsd_common_msgs
@@ -293,19 +293,19 @@ _generate_msg_cpp(fsd_common_msgs
 _generate_msg_cpp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_cpp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_cpp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_cpp(fsd_common_msgs
@@ -317,7 +317,7 @@ _generate_msg_cpp(fsd_common_msgs
 _generate_msg_cpp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/fsd_common_msgs
 )
 
@@ -402,19 +402,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS fsd_common_msgs_generate_messages_c
 _generate_msg_eus(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_eus(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_eus(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Map.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_eus(fsd_common_msgs
@@ -516,13 +516,13 @@ _generate_msg_eus(fsd_common_msgs
 _generate_msg_eus(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_eus(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_eus(fsd_common_msgs
@@ -534,19 +534,19 @@ _generate_msg_eus(fsd_common_msgs
 _generate_msg_eus(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_eus(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_eus(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_eus(fsd_common_msgs
@@ -558,7 +558,7 @@ _generate_msg_eus(fsd_common_msgs
 _generate_msg_eus(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/fsd_common_msgs
 )
 
@@ -643,19 +643,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS fsd_common_msgs_generate_messages_e
 _generate_msg_lisp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_lisp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_lisp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Map.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_lisp(fsd_common_msgs
@@ -757,13 +757,13 @@ _generate_msg_lisp(fsd_common_msgs
 _generate_msg_lisp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_lisp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_lisp(fsd_common_msgs
@@ -775,19 +775,19 @@ _generate_msg_lisp(fsd_common_msgs
 _generate_msg_lisp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_lisp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_lisp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_lisp(fsd_common_msgs
@@ -799,7 +799,7 @@ _generate_msg_lisp(fsd_common_msgs
 _generate_msg_lisp(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/fsd_common_msgs
 )
 
@@ -884,19 +884,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS fsd_common_msgs_generate_messages_l
 _generate_msg_nodejs(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_nodejs(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_nodejs(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Map.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_nodejs(fsd_common_msgs
@@ -998,13 +998,13 @@ _generate_msg_nodejs(fsd_common_msgs
 _generate_msg_nodejs(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_nodejs(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_nodejs(fsd_common_msgs
@@ -1016,19 +1016,19 @@ _generate_msg_nodejs(fsd_common_msgs
 _generate_msg_nodejs(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_nodejs(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_nodejs(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_nodejs(fsd_common_msgs
@@ -1040,7 +1040,7 @@ _generate_msg_nodejs(fsd_common_msgs
 _generate_msg_nodejs(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/fsd_common_msgs
 )
 
@@ -1125,19 +1125,19 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS fsd_common_msgs_generate_messages_n
 _generate_msg_py(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_py(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_py(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Map.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/Cone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_py(fsd_common_msgs
@@ -1239,13 +1239,13 @@ _generate_msg_py(fsd_common_msgs
 _generate_msg_py(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_py(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDetectionsDbscan.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/ConeDbscan.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_py(fsd_common_msgs
@@ -1257,19 +1257,19 @@ _generate_msg_py(fsd_common_msgs
 _generate_msg_py(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetections.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloCone.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_py(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_py(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeDetectionsTrack.msg"
   "${MSG_I_FLAGS}"
-  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg"
+  "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/YoloConeTrack.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/UInt8.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Float32.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/String.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/fsd_common_msgs
 )
 _generate_msg_py(fsd_common_msgs
@@ -1281,7 +1281,7 @@ _generate_msg_py(fsd_common_msgs
 _generate_msg_py(fsd_common_msgs
   "/home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/src/fsd_common_msgs/msg/SkidpadGlobalCenterLine.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/nav_msgs/cmake/../msg/Path.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/fsd_common_msgs
 )
 

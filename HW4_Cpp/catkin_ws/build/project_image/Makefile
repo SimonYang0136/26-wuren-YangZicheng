@@ -75,6 +75,18 @@ CMAKE_BINARY_DIR = /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/opt/CMake/CMake-3.19.8/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/opt/CMake/CMake-3.19.8/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -99,6 +111,17 @@ install/fast: preinstall/fast
 	/opt/CMake/CMake-3.19.8/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/opt/CMake/CMake-3.19.8/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -109,18 +132,6 @@ test:
 test/fast: test
 
 .PHONY : test/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/CMake/CMake-3.19.8/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/opt/CMake/CMake-3.19.8/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -142,17 +153,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/opt/CMake/CMake-3.19.8/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -187,6 +187,291 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+project_image/CMakeFiles/lidar_point.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/lidar_point.dir/rule
+.PHONY : project_image/CMakeFiles/lidar_point.dir/rule
+
+# Convenience name for target.
+lidar_point: project_image/CMakeFiles/lidar_point.dir/rule
+
+.PHONY : lidar_point
+
+# fast build rule for target.
+lidar_point/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/lidar_point.dir/build.make project_image/CMakeFiles/lidar_point.dir/build
+.PHONY : lidar_point/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/project_image.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/project_image.dir/rule
+.PHONY : project_image/CMakeFiles/project_image.dir/rule
+
+# Convenience name for target.
+project_image: project_image/CMakeFiles/project_image.dir/rule
+
+.PHONY : project_image
+
+# fast build rule for target.
+project_image/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/project_image.dir/build.make project_image/CMakeFiles/project_image.dir/build
+.PHONY : project_image/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+.PHONY : project_image/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_lisp: project_image/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_lisp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_lisp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make project_image/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
+.PHONY : tf2_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+.PHONY : project_image/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_cpp: project_image/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_cpp
+
+# fast build rule for target.
+tf2_msgs_generate_messages_cpp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make project_image/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
+.PHONY : tf2_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/actionlib_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/actionlib_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_py: project_image/CMakeFiles/actionlib_generate_messages_py.dir/rule
+
+.PHONY : actionlib_generate_messages_py
+
+# fast build rule for target.
+actionlib_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/actionlib_generate_messages_py.dir/build.make project_image/CMakeFiles/actionlib_generate_messages_py.dir/build
+.PHONY : actionlib_generate_messages_py/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+.PHONY : project_image/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_lisp: project_image/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
+
+.PHONY : actionlib_generate_messages_lisp
+
+# fast build rule for target.
+actionlib_generate_messages_lisp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make project_image/CMakeFiles/actionlib_generate_messages_lisp.dir/build
+.PHONY : actionlib_generate_messages_lisp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_eus: project_image/CMakeFiles/actionlib_generate_messages_eus.dir/rule
+
+.PHONY : actionlib_generate_messages_eus
+
+# fast build rule for target.
+actionlib_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/actionlib_generate_messages_eus.dir/build.make project_image/CMakeFiles/actionlib_generate_messages_eus.dir/build
+.PHONY : actionlib_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/tf_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/tf_generate_messages_py.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_py: project_image/CMakeFiles/tf_generate_messages_py.dir/rule
+
+.PHONY : tf_generate_messages_py
+
+# fast build rule for target.
+tf_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf_generate_messages_py.dir/build.make project_image/CMakeFiles/tf_generate_messages_py.dir/build
+.PHONY : tf_generate_messages_py/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf_generate_messages_nodejs.dir/rule
+.PHONY : project_image/CMakeFiles/tf_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_nodejs: project_image/CMakeFiles/tf_generate_messages_nodejs.dir/rule
+
+.PHONY : tf_generate_messages_nodejs
+
+# fast build rule for target.
+tf_generate_messages_nodejs/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf_generate_messages_nodejs.dir/build.make project_image/CMakeFiles/tf_generate_messages_nodejs.dir/build
+.PHONY : tf_generate_messages_nodejs/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_eus: project_image/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_eus
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make project_image/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+pcl_msgs_generate_messages_py: project_image/CMakeFiles/pcl_msgs_generate_messages_py.dir/rule
+
+.PHONY : pcl_msgs_generate_messages_py
+
+# fast build rule for target.
+pcl_msgs_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/pcl_msgs_generate_messages_py.dir/build.make project_image/CMakeFiles/pcl_msgs_generate_messages_py.dir/build
+.PHONY : pcl_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+.PHONY : project_image/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_cpp: project_image/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
+
+.PHONY : actionlib_generate_messages_cpp
+
+# fast build rule for target.
+actionlib_generate_messages_cpp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make project_image/CMakeFiles/actionlib_generate_messages_cpp.dir/build
+.PHONY : actionlib_generate_messages_cpp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/rule
+.PHONY : project_image/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+pcl_msgs_generate_messages_nodejs: project_image/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : pcl_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+pcl_msgs_generate_messages_nodejs/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/build.make project_image/CMakeFiles/pcl_msgs_generate_messages_nodejs.dir/build
+.PHONY : pcl_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+.PHONY : project_image/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_nodejs: project_image/CMakeFiles/std_srvs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_srvs_generate_messages_nodejs
+
+# fast build rule for target.
+std_srvs_generate_messages_nodejs/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make project_image/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
+.PHONY : std_srvs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule
+.PHONY : project_image/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+pcl_msgs_generate_messages_lisp: project_image/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : pcl_msgs_generate_messages_lisp
+
+# fast build rule for target.
+pcl_msgs_generate_messages_lisp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/build.make project_image/CMakeFiles/pcl_msgs_generate_messages_lisp.dir/build
+.PHONY : pcl_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/pcl_msgs_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/pcl_msgs_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/pcl_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+pcl_msgs_generate_messages_eus: project_image/CMakeFiles/pcl_msgs_generate_messages_eus.dir/rule
+
+.PHONY : pcl_msgs_generate_messages_eus
+
+# fast build rule for target.
+pcl_msgs_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/pcl_msgs_generate_messages_eus.dir/build.make project_image/CMakeFiles/pcl_msgs_generate_messages_eus.dir/build
+.PHONY : pcl_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/pcl_ros_gencfg.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/pcl_ros_gencfg.dir/rule
+.PHONY : project_image/CMakeFiles/pcl_ros_gencfg.dir/rule
+
+# Convenience name for target.
+pcl_ros_gencfg: project_image/CMakeFiles/pcl_ros_gencfg.dir/rule
+
+.PHONY : pcl_ros_gencfg
+
+# fast build rule for target.
+pcl_ros_gencfg/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/pcl_ros_gencfg.dir/build.make project_image/CMakeFiles/pcl_ros_gencfg.dir/build
+.PHONY : pcl_ros_gencfg/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+.PHONY : project_image/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_lisp: project_image/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_lisp
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_lisp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make project_image/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
+
+# Convenience name for target.
 project_image/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
 .PHONY : project_image/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
@@ -202,6 +487,51 @@ visualization_msgs_generate_messages_nodejs/fast:
 .PHONY : visualization_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+project_image/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+.PHONY : project_image/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_nodejs: project_image/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_generate_messages_nodejs/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make project_image/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+.PHONY : project_image/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_cpp: project_image/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_cpp
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_cpp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make project_image/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+
+# Convenience name for target.
 project_image/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
 	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
 .PHONY : project_image/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
@@ -215,6 +545,96 @@ visualization_msgs_generate_messages_lisp: project_image/CMakeFiles/visualizatio
 visualization_msgs_generate_messages_lisp/fast:
 	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make project_image/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
 .PHONY : visualization_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+.PHONY : project_image/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_lisp: project_image/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make project_image/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/bond_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/bond_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/bond_generate_messages_py.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_py: project_image/CMakeFiles/bond_generate_messages_py.dir/rule
+
+.PHONY : bond_generate_messages_py
+
+# fast build rule for target.
+bond_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/bond_generate_messages_py.dir/build.make project_image/CMakeFiles/bond_generate_messages_py.dir/build
+.PHONY : bond_generate_messages_py/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_py: project_image/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/std_srvs_generate_messages_py.dir/build.make project_image/CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
+.PHONY : project_image/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+pcl_msgs_generate_messages_cpp: project_image/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : pcl_msgs_generate_messages_cpp
+
+# fast build rule for target.
+pcl_msgs_generate_messages_cpp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/build.make project_image/CMakeFiles/pcl_msgs_generate_messages_cpp.dir/build
+.PHONY : pcl_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/bond_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/bond_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/bond_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_eus: project_image/CMakeFiles/bond_generate_messages_eus.dir/rule
+
+.PHONY : bond_generate_messages_eus
+
+# fast build rule for target.
+bond_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/bond_generate_messages_eus.dir/build.make project_image/CMakeFiles/bond_generate_messages_eus.dir/build
+.PHONY : bond_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+.PHONY : project_image/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_nodejs: project_image/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_nodejs
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_nodejs/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make project_image/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
 
 # Convenience name for target.
 project_image/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
@@ -277,19 +697,34 @@ sensor_msgs_generate_messages_lisp/fast:
 .PHONY : sensor_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
-project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+project_image/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+.PHONY : project_image/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_eus: project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+dynamic_reconfigure_gencfg: project_image/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_eus
+.PHONY : dynamic_reconfigure_gencfg
 
 # fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make project_image/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
+dynamic_reconfigure_gencfg/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make project_image/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
+.PHONY : dynamic_reconfigure_gencfg/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/tf_generate_messages_lisp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf_generate_messages_lisp.dir/rule
+.PHONY : project_image/CMakeFiles/tf_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_lisp: project_image/CMakeFiles/tf_generate_messages_lisp.dir/rule
+
+.PHONY : tf_generate_messages_lisp
+
+# fast build rule for target.
+tf_generate_messages_lisp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf_generate_messages_lisp.dir/build.make project_image/CMakeFiles/tf_generate_messages_lisp.dir/build
+.PHONY : tf_generate_messages_lisp/fast
 
 # Convenience name for target.
 project_image/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
@@ -307,19 +742,19 @@ sensor_msgs_generate_messages_nodejs/fast:
 .PHONY : sensor_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-project_image/CMakeFiles/project_image_node.dir/rule:
-	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/project_image_node.dir/rule
-.PHONY : project_image/CMakeFiles/project_image_node.dir/rule
+project_image/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
 
 # Convenience name for target.
-project_image_node: project_image/CMakeFiles/project_image_node.dir/rule
+dynamic_reconfigure_generate_messages_py: project_image/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule
 
-.PHONY : project_image_node
+.PHONY : dynamic_reconfigure_generate_messages_py
 
 # fast build rule for target.
-project_image_node/fast:
-	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/project_image_node.dir/build.make project_image/CMakeFiles/project_image_node.dir/build
-.PHONY : project_image_node/fast
+dynamic_reconfigure_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make project_image/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_py/fast
 
 # Convenience name for target.
 project_image/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
@@ -337,19 +772,346 @@ visualization_msgs_generate_messages_py/fast:
 .PHONY : visualization_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+project_image/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-sensor_msgs_generate_messages_py: project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+tf2_msgs_generate_messages_eus: project_image/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
 
-.PHONY : sensor_msgs_generate_messages_py
+.PHONY : tf2_msgs_generate_messages_eus
 
 # fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make project_image/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
+tf2_msgs_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make project_image/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
+.PHONY : tf2_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/nodelet_generate_messages_cpp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+.PHONY : project_image/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_cpp: project_image/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+
+.PHONY : nodelet_generate_messages_cpp
+
+# fast build rule for target.
+nodelet_generate_messages_cpp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make project_image/CMakeFiles/nodelet_generate_messages_cpp.dir/build
+.PHONY : nodelet_generate_messages_cpp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/nodelet_generate_messages_lisp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+.PHONY : project_image/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_lisp: project_image/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+
+.PHONY : nodelet_generate_messages_lisp
+
+# fast build rule for target.
+nodelet_generate_messages_lisp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make project_image/CMakeFiles/nodelet_generate_messages_lisp.dir/build
+.PHONY : nodelet_generate_messages_lisp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
+.PHONY : project_image/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_nodejs: project_image/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
+
+.PHONY : nodelet_generate_messages_nodejs
+
+# fast build rule for target.
+nodelet_generate_messages_nodejs/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make project_image/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
+.PHONY : nodelet_generate_messages_nodejs/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/nodelet_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/nodelet_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/nodelet_generate_messages_py.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_py: project_image/CMakeFiles/nodelet_generate_messages_py.dir/rule
+
+.PHONY : nodelet_generate_messages_py
+
+# fast build rule for target.
+nodelet_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/nodelet_generate_messages_py.dir/build.make project_image/CMakeFiles/nodelet_generate_messages_py.dir/build
+.PHONY : nodelet_generate_messages_py/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/bond_generate_messages_cpp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/bond_generate_messages_cpp.dir/rule
+.PHONY : project_image/CMakeFiles/bond_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_cpp: project_image/CMakeFiles/bond_generate_messages_cpp.dir/rule
+
+.PHONY : bond_generate_messages_cpp
+
+# fast build rule for target.
+bond_generate_messages_cpp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/bond_generate_messages_cpp.dir/build.make project_image/CMakeFiles/bond_generate_messages_cpp.dir/build
+.PHONY : bond_generate_messages_cpp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+.PHONY : project_image/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_nodejs: project_image/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+tf2_msgs_generate_messages_nodejs/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make project_image/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
+.PHONY : tf2_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/nodelet_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/nodelet_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/nodelet_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_eus: project_image/CMakeFiles/nodelet_generate_messages_eus.dir/rule
+
+.PHONY : nodelet_generate_messages_eus
+
+# fast build rule for target.
+nodelet_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/nodelet_generate_messages_eus.dir/build.make project_image/CMakeFiles/nodelet_generate_messages_eus.dir/build
+.PHONY : nodelet_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/bond_generate_messages_nodejs.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+.PHONY : project_image/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_nodejs: project_image/CMakeFiles/bond_generate_messages_nodejs.dir/rule
+
+.PHONY : bond_generate_messages_nodejs
+
+# fast build rule for target.
+bond_generate_messages_nodejs/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/bond_generate_messages_nodejs.dir/build.make project_image/CMakeFiles/bond_generate_messages_nodejs.dir/build
+.PHONY : bond_generate_messages_nodejs/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/nodelet_topic_tools_gencfg.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/nodelet_topic_tools_gencfg.dir/rule
+.PHONY : project_image/CMakeFiles/nodelet_topic_tools_gencfg.dir/rule
+
+# Convenience name for target.
+nodelet_topic_tools_gencfg: project_image/CMakeFiles/nodelet_topic_tools_gencfg.dir/rule
+
+.PHONY : nodelet_topic_tools_gencfg
+
+# fast build rule for target.
+nodelet_topic_tools_gencfg/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/nodelet_topic_tools_gencfg.dir/build.make project_image/CMakeFiles/nodelet_topic_tools_gencfg.dir/build
+.PHONY : nodelet_topic_tools_gencfg/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : project_image/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_cpp: project_image/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make project_image/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/tf_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/tf_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_eus: project_image/CMakeFiles/tf_generate_messages_eus.dir/rule
+
+.PHONY : tf_generate_messages_eus
+
+# fast build rule for target.
+tf_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf_generate_messages_eus.dir/build.make project_image/CMakeFiles/tf_generate_messages_eus.dir/build
+.PHONY : tf_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/tf_generate_messages_cpp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf_generate_messages_cpp.dir/rule
+.PHONY : project_image/CMakeFiles/tf_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+tf_generate_messages_cpp: project_image/CMakeFiles/tf_generate_messages_cpp.dir/rule
+
+.PHONY : tf_generate_messages_cpp
+
+# fast build rule for target.
+tf_generate_messages_cpp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf_generate_messages_cpp.dir/build.make project_image/CMakeFiles/tf_generate_messages_cpp.dir/build
+.PHONY : tf_generate_messages_cpp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_eus: project_image/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make project_image/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/topic_tools_generate_messages_nodejs.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/topic_tools_generate_messages_nodejs.dir/rule
+.PHONY : project_image/CMakeFiles/topic_tools_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+topic_tools_generate_messages_nodejs: project_image/CMakeFiles/topic_tools_generate_messages_nodejs.dir/rule
+
+.PHONY : topic_tools_generate_messages_nodejs
+
+# fast build rule for target.
+topic_tools_generate_messages_nodejs/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/topic_tools_generate_messages_nodejs.dir/build.make project_image/CMakeFiles/topic_tools_generate_messages_nodejs.dir/build
+.PHONY : topic_tools_generate_messages_nodejs/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/bond_generate_messages_lisp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/bond_generate_messages_lisp.dir/rule
+.PHONY : project_image/CMakeFiles/bond_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_lisp: project_image/CMakeFiles/bond_generate_messages_lisp.dir/rule
+
+.PHONY : bond_generate_messages_lisp
+
+# fast build rule for target.
+bond_generate_messages_lisp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/bond_generate_messages_lisp.dir/build.make project_image/CMakeFiles/bond_generate_messages_lisp.dir/build
+.PHONY : bond_generate_messages_lisp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
+.PHONY : project_image/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+topic_tools_generate_messages_cpp: project_image/CMakeFiles/topic_tools_generate_messages_cpp.dir/rule
+
+.PHONY : topic_tools_generate_messages_cpp
+
+# fast build rule for target.
+topic_tools_generate_messages_cpp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/topic_tools_generate_messages_cpp.dir/build.make project_image/CMakeFiles/topic_tools_generate_messages_cpp.dir/build
+.PHONY : topic_tools_generate_messages_cpp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/topic_tools_generate_messages_eus.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/topic_tools_generate_messages_eus.dir/rule
+.PHONY : project_image/CMakeFiles/topic_tools_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+topic_tools_generate_messages_eus: project_image/CMakeFiles/topic_tools_generate_messages_eus.dir/rule
+
+.PHONY : topic_tools_generate_messages_eus
+
+# fast build rule for target.
+topic_tools_generate_messages_eus/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/topic_tools_generate_messages_eus.dir/build.make project_image/CMakeFiles/topic_tools_generate_messages_eus.dir/build
+.PHONY : topic_tools_generate_messages_eus/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
+.PHONY : project_image/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+topic_tools_generate_messages_lisp: project_image/CMakeFiles/topic_tools_generate_messages_lisp.dir/rule
+
+.PHONY : topic_tools_generate_messages_lisp
+
+# fast build rule for target.
+topic_tools_generate_messages_lisp/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/topic_tools_generate_messages_lisp.dir/build.make project_image/CMakeFiles/topic_tools_generate_messages_lisp.dir/build
+.PHONY : topic_tools_generate_messages_lisp/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+tf2_msgs_generate_messages_py: project_image/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
+
+.PHONY : tf2_msgs_generate_messages_py
+
+# fast build rule for target.
+tf2_msgs_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make project_image/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
+.PHONY : tf2_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+project_image/CMakeFiles/topic_tools_generate_messages_py.dir/rule:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 project_image/CMakeFiles/topic_tools_generate_messages_py.dir/rule
+.PHONY : project_image/CMakeFiles/topic_tools_generate_messages_py.dir/rule
+
+# Convenience name for target.
+topic_tools_generate_messages_py: project_image/CMakeFiles/topic_tools_generate_messages_py.dir/rule
+
+.PHONY : topic_tools_generate_messages_py
+
+# fast build rule for target.
+topic_tools_generate_messages_py/fast:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/topic_tools_generate_messages_py.dir/build.make project_image/CMakeFiles/topic_tools_generate_messages_py.dir/build
+.PHONY : topic_tools_generate_messages_py/fast
+
+src/lidar_point.o: src/lidar_point.cpp.o
+
+.PHONY : src/lidar_point.o
+
+# target to build an object file
+src/lidar_point.cpp.o:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/lidar_point.dir/build.make project_image/CMakeFiles/lidar_point.dir/src/lidar_point.cpp.o
+.PHONY : src/lidar_point.cpp.o
+
+src/lidar_point.i: src/lidar_point.cpp.i
+
+.PHONY : src/lidar_point.i
+
+# target to preprocess a source file
+src/lidar_point.cpp.i:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/lidar_point.dir/build.make project_image/CMakeFiles/lidar_point.dir/src/lidar_point.cpp.i
+.PHONY : src/lidar_point.cpp.i
+
+src/lidar_point.s: src/lidar_point.cpp.s
+
+.PHONY : src/lidar_point.s
+
+# target to generate assembly for a file
+src/lidar_point.cpp.s:
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/lidar_point.dir/build.make project_image/CMakeFiles/lidar_point.dir/src/lidar_point.cpp.s
+.PHONY : src/lidar_point.cpp.s
 
 src/project_image.o: src/project_image.cpp.o
 
@@ -357,7 +1119,7 @@ src/project_image.o: src/project_image.cpp.o
 
 # target to build an object file
 src/project_image.cpp.o:
-	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/project_image_node.dir/build.make project_image/CMakeFiles/project_image_node.dir/src/project_image.cpp.o
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/project_image.dir/build.make project_image/CMakeFiles/project_image.dir/src/project_image.cpp.o
 .PHONY : src/project_image.cpp.o
 
 src/project_image.i: src/project_image.cpp.i
@@ -366,7 +1128,7 @@ src/project_image.i: src/project_image.cpp.i
 
 # target to preprocess a source file
 src/project_image.cpp.i:
-	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/project_image_node.dir/build.make project_image/CMakeFiles/project_image_node.dir/src/project_image.cpp.i
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/project_image.dir/build.make project_image/CMakeFiles/project_image.dir/src/project_image.cpp.i
 .PHONY : src/project_image.cpp.i
 
 src/project_image.s: src/project_image.cpp.s
@@ -375,7 +1137,7 @@ src/project_image.s: src/project_image.cpp.s
 
 # target to generate assembly for a file
 src/project_image.cpp.s:
-	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/project_image_node.dir/build.make project_image/CMakeFiles/project_image_node.dir/src/project_image.cpp.s
+	cd /home/simon/Desktop/Homeworks/HW4_Cpp/catkin_ws/build && $(MAKE) $(MAKESILENT) -f project_image/CMakeFiles/project_image.dir/build.make project_image/CMakeFiles/project_image.dir/src/project_image.cpp.s
 .PHONY : src/project_image.cpp.s
 
 # Help Target
@@ -391,17 +1153,69 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... actionlib_generate_messages_cpp"
+	@echo "... actionlib_generate_messages_eus"
+	@echo "... actionlib_generate_messages_lisp"
+	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... actionlib_generate_messages_py"
+	@echo "... bond_generate_messages_cpp"
+	@echo "... bond_generate_messages_eus"
+	@echo "... bond_generate_messages_lisp"
+	@echo "... bond_generate_messages_nodejs"
+	@echo "... bond_generate_messages_py"
+	@echo "... dynamic_reconfigure_gencfg"
+	@echo "... dynamic_reconfigure_generate_messages_cpp"
+	@echo "... dynamic_reconfigure_generate_messages_eus"
+	@echo "... dynamic_reconfigure_generate_messages_lisp"
+	@echo "... dynamic_reconfigure_generate_messages_nodejs"
+	@echo "... dynamic_reconfigure_generate_messages_py"
+	@echo "... nodelet_generate_messages_cpp"
+	@echo "... nodelet_generate_messages_eus"
+	@echo "... nodelet_generate_messages_lisp"
+	@echo "... nodelet_generate_messages_nodejs"
+	@echo "... nodelet_generate_messages_py"
+	@echo "... nodelet_topic_tools_gencfg"
+	@echo "... pcl_msgs_generate_messages_cpp"
+	@echo "... pcl_msgs_generate_messages_eus"
+	@echo "... pcl_msgs_generate_messages_lisp"
+	@echo "... pcl_msgs_generate_messages_nodejs"
+	@echo "... pcl_msgs_generate_messages_py"
+	@echo "... pcl_ros_gencfg"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... std_srvs_generate_messages_eus"
+	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... std_srvs_generate_messages_nodejs"
+	@echo "... std_srvs_generate_messages_py"
+	@echo "... tf2_msgs_generate_messages_cpp"
+	@echo "... tf2_msgs_generate_messages_eus"
+	@echo "... tf2_msgs_generate_messages_lisp"
+	@echo "... tf2_msgs_generate_messages_nodejs"
+	@echo "... tf2_msgs_generate_messages_py"
+	@echo "... tf_generate_messages_cpp"
+	@echo "... tf_generate_messages_eus"
+	@echo "... tf_generate_messages_lisp"
+	@echo "... tf_generate_messages_nodejs"
+	@echo "... tf_generate_messages_py"
+	@echo "... topic_tools_generate_messages_cpp"
+	@echo "... topic_tools_generate_messages_eus"
+	@echo "... topic_tools_generate_messages_lisp"
+	@echo "... topic_tools_generate_messages_nodejs"
+	@echo "... topic_tools_generate_messages_py"
 	@echo "... visualization_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_eus"
 	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_py"
-	@echo "... project_image_node"
+	@echo "... lidar_point"
+	@echo "... project_image"
+	@echo "... src/lidar_point.o"
+	@echo "... src/lidar_point.i"
+	@echo "... src/lidar_point.s"
 	@echo "... src/project_image.o"
 	@echo "... src/project_image.i"
 	@echo "... src/project_image.s"

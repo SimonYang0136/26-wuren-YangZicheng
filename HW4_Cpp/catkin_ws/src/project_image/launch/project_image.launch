@@ -11,7 +11,7 @@
         respawn="false">
     </node>
 
-    <!-- 可选：启动 RViz 显示图像 -->
+    <!--启动 RViz 显示图像 -->
     <node 
         name="rviz_display" 
         pkg="rviz" 
