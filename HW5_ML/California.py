@@ -31,10 +31,10 @@ raw = fetch_california_housing(data_home='./cal_housing/')
 # print(df.info())
 
 # 经检查，数据集没有缺失值，转回Bunch对象做归一化和标准化
-StandardScaler = StandardScaler()
-MinMaxScaler = MinMaxScaler()
-raw_normalized = StandardScaler.fit_transform(raw.data)
-raw_preprocessed = MinMaxScaler.fit_transform(raw_normalized)
+Standard_Scaler = StandardScaler()
+MinMax_Scaler = MinMaxScaler()
+raw_normalized = Standard_Scaler.fit_transform(raw.data)
+raw_preprocessed = MinMax_Scaler.fit_transform(raw_normalized)
 
 # 将处理后的数据转换回Bunch对象
 california_housing = Bunch(data=raw_preprocessed, target=raw.target, feature_names=raw.feature_names, DESCR=raw.DESCR)
@@ -57,7 +57,7 @@ class LinearRegression:
     def fit(self, X, y):
         """使用梯度下降的 fit 方法"""
         n_samples, n_features = X.shape
-        # python的解包赋值，X.shape返回一个元组，包含行数和列数
+        # python的解包赋值，X是一个ndarray，X.shape返回一个元组，包含行数和列数
         # n_samples = X.shape[0]  # 样本数量，行数
         # n_features = X.shape[1]  # 特征数量，列数
         
@@ -100,36 +100,93 @@ class LinearRegression:
         """计算三个数据集的MSE"""
         y_pred = self.predict(X)
         return np.mean((y_pred - y) ** 2) # 沿向量方向的平均
+    
+class LinearRegressionWithL2:   
+    def __init__(self, learning_rate=0.01, epochs=1000, lambda_=0.01):
+        self.learning_rate = learning_rate
+        self.n_iterations = epochs
+        self.lambda_ = lambda_  # L2正则化参数
+        self.weights = None
+        self.bias = None
+        self.cost_history = []  # 添加损失历史记录
+
+    def fit(self, X, y):
+        """使用梯度下降的 fit 方法"""
+        n_samples, n_features = X.shape
+        
+        # 初始化参数
+        self.weights = np.zeros(n_features) 
+        self.bias = 0  
+        
+        for i in range(self.n_iterations):
+            # 1. 前向传播：计算预测值
+            y_pred = X @ self.weights + self.bias
+            
+            # 2. 计算误差(下面计算梯度会用到)
+            error = y_pred - y  
+            cost = (1/(2*n_samples)) * np.sum((error)**2) + (self.lambda_/(2*n_samples)) * np.sum(self.weights**2)  # 添加L2正则化项
+            self.cost_history.append(cost)  # 记录损失历史
+            
+            # 3. 计算梯度
+            dw = (1/n_samples) * (X.T @ error) + (self.lambda_/n_samples) * self.weights  # 添加L2正则化梯度
+            db = (1/n_samples) * np.sum(error)  
+            
+            # 4. 更新参数
+            self.weights -= self.learning_rate * dw
+            self.bias -= self.learning_rate * db
+            
+            if i % 100 == 0:
+                mse = 2*cost
+                print(f"迭代 {i}: MSE = {mse:.6f}")
+    
+    def predict(self, X):
+        """使用当前模型参数进行预测"""
+        return X.dot(self.weights) + self.bias
+    
+    def get_mse(self, X, y):
+        """计算三个数据集的MSE"""
+        y_pred = self.predict(X)
+        return np.mean((y_pred - y) ** 2)
 
 def train_and_evaluate():
     """训练线性回归模型并评估性能"""
     # 创建模型
-    model = LinearRegression(learning_rate=0.1, epochs=1000)
-    
+    model1 = LinearRegression(learning_rate=0.1, epochs=1000)
+    model2 = LinearRegressionWithL2(learning_rate=0.1, epochs=1000, lambda_=0.01)
     # 训练模型
     print("开始使用梯度下降训练模型...")
-    model.fit(X_train, y_train)
+    model1.fit(X_train, y_train)
+    model2.fit(X_train, y_train)
     print("训练完成！")
     
     # 计算MSE
-    train_mse = model.get_mse(X_train, y_train)
-    val_mse = model.get_mse(X_val, y_val)
-    test_mse = model.get_mse(X_test, y_test)
-    
+    train_mse = model1.get_mse(X_train, y_train)
+    val_mse = model1.get_mse(X_val, y_val)
+    test_mse = model1.get_mse(X_test, y_test)
+
+    train_mse_l2 = model2.get_mse(X_train, y_train)
+    val_mse_l2 = model2.get_mse(X_val, y_val)
+    test_mse_l2 = model2.get_mse(X_test, y_test)
+
     print(f"\n=== MSE评估结果 ===")
     print(f"训练集 MSE: {train_mse:.6f}")
     print(f"验证集 MSE: {val_mse:.6f}")
     print(f"测试集 MSE: {test_mse:.6f}")
+    print(f"\n=== L2正则化 MSE评估结果 ===")
+    print(f"训练集 MSE: {train_mse_l2:.6f}")
+    print(f"验证集 MSE: {val_mse_l2:.6f}")
+    print(f"测试集 MSE: {test_mse_l2:.6f}")
     
     # 绘制MSE变化曲线
     import matplotlib.pyplot as plt
     plt.figure(figsize=(10, 6))
-    plt.plot(model.cost_history)
-    plt.title('Training_MSE_Change')
+    plt.plot(model1.cost_history)
+    plt.plot(model2.cost_history)
+    plt.legend(['Linear Regression', 'Linear Regression with L2'])
+    plt.title('Training_Cost_Change')
     plt.xlabel('epochs')
-    plt.ylabel('MSE')
+    plt.ylabel('Cost')
     plt.grid(True)
     plt.show()
-
 
 train_and_evaluate()
