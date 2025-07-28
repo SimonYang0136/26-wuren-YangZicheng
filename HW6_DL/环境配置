@@ -1,0 +1,56 @@
+解释一下为什么要先装anaconda再装cuda：
+	曾经在一个Alphazero五子棋项目里试图用python调cpp的核心库，但是CUDA10到CUDA12改了插件的文件夹分布，导致cmake报错，不得不降级CUDA
+	
+1.官网查找显卡对应驱动版本，2060Laptop = 570
+	Ubuntu设置-关于-软件更新-附加驱动-使用NVIDIA driver metapackage 来自xx版本(不是server)替换Nouveau开源驱动
+
+2.Ubuntu Anaconda和ROS相关
+	安装后自动初始化选择“no”，否则Anaconda会编辑.bashrc，自动启动Anaconda的python，其缺少ROS依赖
+	以后需要在每个使用Anaconda的终端中手动启动，具体方式：
+
+方法1：直接修改 PATH(错误方式)
+export PATH="/home/$USER/anaconda3/bin:$PATH"
+export指令设置或修改环境变量，仅对当前登录会话生效。
+将 Anaconda 的 bin 目录添加到 PATH 最前面，使系统能找到 conda、python 等可执行文件
+实际效果：
+✅ 可以运行 conda --version
+✅ 可以运行 python (会启动 Anaconda 的 Python)
+❌ 无法使用 conda activate
+❌ 环境切换功能完全失效
+❌ 提示符不会显示环境名称
+❌ 环境变量(CONDA_PREFIX等)未设置
+
+方法2：使用 conda shell hook
+eval "$(/home/simon/anaconda3/bin/conda shell.YOUR_SHELL_NAME hook)"
+# 例如 bash 用户：
+eval "$(/home/simon/anaconda3/bin/conda shell.bash hook)"
+作用原理：
+执行完整的 shell 集成，动态生成并执行初始化脚本，在当前 shell 会话中注册 conda 的所有功能
+
+conda create --name FSAC python=3.12
+Pytorch一般使用python3.9-3.12
+
+conda install cuda -c nvidia/label/cuda-12.8.1
+nvcc --version 看到12.8才对
+*只有完全删除环境，才会彻底删除CUDA，remove没用，不知道为什么
+
+cudnn只要适用12.x的都行，https://developer.nvidia.com/cudnn-archive，最新版9.11.0但是不支持Ubuntu20.04，9.10.2可以
+但是conda源只到9.1.1.17，换个源试试？
+conda config --show channels
+conda config --remove-key channels
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+没用，但是conda search -c conda-forge cudnn可以
+conda config --add channels conda-forge
+conda install cudnn==9.10.1.4
+
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+*windows和linux指令一样了，然后Conda给删了，不知道为什么
+其实pytorch集成了必要的运行库，如果不需要调cpp库可以不装cuda和cudnn
+
+
+https://blog.csdn.net/fengbingchun/article/details/50529500 CNN各层的常见结构顺序
+https://blog.csdn.net/fuhanghang/article/details/135544761 池化层的常见大小
