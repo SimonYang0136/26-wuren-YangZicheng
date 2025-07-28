@@ -1,5 +1,5 @@
 解释一下为什么要先装anaconda再装cuda：
-	曾经在一个Alphazero五子棋项目里试图用python调cpp的核心库，但是CUDA10到CUDA12改了插件的文件夹分布，导致cmake报错，不得不降级CUDA
+	曾经在一个开源Alphazero五子棋项目里遇到CUDA兼容问题，CUDA10到CUDA12改了插件名称和数量，导致cmake报错，不得不降级CUDA
 	
 1.官网查找显卡对应驱动版本，2060Laptop = 570
 	Ubuntu设置-关于-软件更新-附加驱动-使用NVIDIA driver metapackage 来自xx版本(不是server)替换Nouveau开源驱动
